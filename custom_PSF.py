@@ -114,7 +114,12 @@ def gen_PSF(aperture_phase_choice):
     FTAp = np.fft.fftshift(FTAp) # shift zero freq to center
     FTAp = FTAp[int(centerx-hwstamp):int(centerx+hwstamp),int(centery-hwstamp):int(centery+hwstamp)]
 
-    import ipdb; ipdb.set_trace()
+    # kludge to remove checkerboard from real and imaginary terms in [ A ] which will be returned to user
+    FTAp_return_big = np.fft.fftshift(np.fft.fft2(np.fft.fftshift(aperture_phase_choice)))
+    buffer = 100
+    y_big, x_big = np.shape(FTAp_return_big)
+    FTAp_return = FTAp_return_big[int(0.5*y_big)-buffer:int(0.5*y_big)+buffer,int(0.5*x_big)-buffer:int(0.5*x_big)+buffer] # return cutout (NOTE THE ARBITRARY HARD-CODED SIZE!)
+
     # create [ PSF ]
     I = np.real(FTAp * np.conj(FTAp))
 
@@ -126,7 +131,7 @@ def gen_PSF(aperture_phase_choice):
     # create [ OTF ]
     #This was needed to get rid of the checkerboard pattern
     padI = np.fft.fftshift(padI) # shift zero freq to center
-    import ipdb; ipdb.set_trace()
+
     PhaseExtract = np.fft.fft2(padI) # 2D FT
     PhaseExtract = np.fft.fftshift(PhaseExtract)
     # amplitude and angle of OTF
@@ -142,7 +147,7 @@ def gen_PSF(aperture_phase_choice):
     print("Phase of Interference fringes = ",   InterfPhase)
 
     # return the complex field at focal plane [ A ], and the resulting PSF intensity [ PSF ], OTF amplitude, OTF argument
-    return FTAp, I, AmpPE, ArgPE
+    return FTAp_return, I, AmpPE, ArgPE
 
 
 # for secondary physical axes: 0.2161um per pixel.
@@ -178,6 +183,24 @@ def main():
     buffer = 100 # pix
     waveguide_cutout = df_intensity[int(xycen[1]-buffer):int(xycen[1]+buffer),int(xycen[0]-buffer):int(xycen[0]+buffer)]
 
+    ## USER INPUTS
+    input_field = field_complex_A_hex
+    mode_field = waveguide_cutout # this variable is only real, but physically the LT0 mode has a phase of zero anyway
+    ## END USER INPUT
+
+    overlap_int_complex = np.sum(input_field*mode_field) / np.sqrt( np.sum(np.abs(mode_field)**2) * np.sum(np.abs(input_field)**2) )
+
+    overlap_int = np.abs(overlap_int_complex)**2
+
+    print('overlap_int:',overlap_int)
+
+    if waveguide_cutout.shape != I_PSF_circ.shape:
+        print('WAVEGUIDE AND CIRC PSF SHAPES NOT THE SAME!!!')
+    if waveguide_cutout.shape != I_PSF_hex.shape:
+        print('WAVEGUIDE AND HEX PSF SHAPES NOT THE SAME!!!')
+
+
+    # plotting
 
     # radius of first dark ring in um
     wavel = 1.55 # um
@@ -194,9 +217,6 @@ def main():
     circ2 = Circle((circ_cen_x,circ_cen_y),radius=circ_r_pix,color='white',fill=False)
     circ3 = Circle((circ_cen_x,circ_cen_y),radius=circ_r_pix,color='white',fill=False)
 
-
-    # plotting
-
     fig, ax = plt.subplots(nrows=2, ncols=3, figsize=(20,10), layout='constrained')
 
     ax[0,0].set_title('Circular subap')
@@ -209,21 +229,12 @@ def main():
     ax[0,1].imshow(hex_aperture_simple, cmap='Greys_r', interpolation='nearest')
     ax[0,1].set_xlabel('(arbitrary)')
 
-    
-    '''
     # show normalized profiles of everything
-    ax[0,2].plot(np.divide(cutout_airy[int(buffer),:],np.max(cutout_airy[int(buffer),:])),color='red',label='circle')
-    ax[0,2].plot(np.divide(cutout_hex[int(buffer),:],np.max(cutout_hex[int(buffer),:])),color='blue',label='hexagon')
+    ax[0,2].plot(np.divide(I_PSF_circ[int(buffer),:],np.max(I_PSF_circ[int(buffer),:])),color='red',label='circle')
+    ax[0,2].plot(np.divide(I_PSF_hex[int(buffer),:],np.max(I_PSF_hex[int(buffer),:])),color='blue',label='hexagon')
     ax[0,2].plot(np.divide(waveguide_cutout[int(buffer),:],np.max(waveguide_cutout[int(buffer),:])),color='green',label='waveguide mode')
     ax[0,2].legend()
-    '''
 
-    if waveguide_cutout.shape != I_PSF_circ.shape:
-        print('WAVEGUIDE AND CIRC PSF SHAPES NOT THE SAME!!!')
-    if waveguide_cutout.shape != I_PSF_hex.shape:
-        print('WAVEGUIDE AND HEX PSF SHAPES NOT THE SAME!!!')
-
-    import ipdb; ipdb.set_trace()
     ax[1,0].set_title('I (log)')
     ax[1,0].imshow(I_PSF_circ, extent=[-waveguide_cutout.shape[1]/2., waveguide_cutout.shape[1]/2., -waveguide_cutout.shape[0]/2., waveguide_cutout.shape[0]/2. ], alpha=1, norm='log')
     ax[1,0].set_xlabel('pixel')
@@ -246,8 +257,6 @@ def main():
     ax[1,2].set_ylabel('pixel')
     ax[1,2].add_patch(circ3)
 
-    plt.show()
-    '''
     secax = ax[1,0].secondary_xaxis('top', functions=(pix2um, um2pix))
     secax.set_xlabel('physical (um)')
     secay = ax[1,0].secondary_yaxis('right', functions=(pix2um, um2pix))
@@ -267,8 +276,8 @@ def main():
     secax.set_xlabel('physical (um)')
     secay = ax[0,2].secondary_yaxis('right', functions=(pix2um, um2pix))
     secay.set_ylabel('physical (um)')
-    '''
-    import ipdb; ipdb.set_trace()
+
+    plt.show()
 
     '''
     fig, axs = plt.subplots(1, 4)
