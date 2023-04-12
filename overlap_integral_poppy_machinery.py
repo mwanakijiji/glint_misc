@@ -12,23 +12,39 @@ import astropy.units as u
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
 
-## BEGIN USER INPUT
-# read in complex fields from custom_PSF.py
-file = open('./complex_fields_hex.pkl', 'rb')
-# dump information to that file
-amp, arg, I, aperture = pickle.load(file)
-# close the file
-file.close()
-## END USER INPUT
+# define scale of apertures of all modeled subaperture shapes
+length_scale = 3. # m; this is r of circular pupil, and half of the hex side-to-side dim
+wavel_scale = 6.3e-6 # m
+pixel_scale = 0.010 
+fov = 5.0 # arcsec
 
-# read in complex fields from circular aperture, for scaling
-file = open('./complex_fields_circ.pkl', 'rb')
-# dump information to that file
-amp_circ, arg_circ, I_circ, aperture_circ = pickle.load(file)
-# close the file
-file.close()
+# ## Circular pupil
 
-import ipdb; ipdb.set_trace()
+# circular pupil
+
+osys_circ = poppy.OpticalSystem()
+aper_circ = poppy.CircularAperture(radius=length_scale)
+aper_circ_fits = aper_circ.to_fits()
+osys_circ.add_pupil(aper_circ)    # pupil radius in meters
+
+osys_circ.add_detector(pixelscale=pixel_scale, fov_arcsec=fov)  # image plane coordinates in arcseconds
+psf_circ = osys_circ.calc_psf(wavel_scale)                            # wavelength in meters
+#poppy.display_psf(psf_circ, title='Circular pupil')
+
+# ## Hexagonal pupil
+
+# hexagonal pupil
+
+osys_hex = poppy.OpticalSystem()
+aper_hex = poppy.HexagonAperture(flattoflat=2.*length_scale)
+aper_hex_fits = aper_hex.to_fits()
+osys_hex.add_pupil(aper_hex)
+#osys_hex.display()
+
+osys_hex.add_detector(pixelscale=pixel_scale, fov_arcsec=fov)  # image plane coordinates in arcseconds
+psf_hex = osys_hex.calc_psf(wavel_scale)                            # wavelength in meters
+#poppy.display_psf(psf_hex, title='Hexagonal pupil')
+
 # read in waveguide mode profile
 '''
 S. Gross:
@@ -51,9 +67,8 @@ plt.scatter(xycen[0],xycen[1], color='red', s=20)
 plt.show()
 '''
 
-import ipdb; ipdb.set_trace()
 # cutouts
-buffer = 40 # pix
+buffer = 100 # pix
 waveguide_cutout = df_intensity[int(xycen[1]-buffer):int(xycen[1]+buffer),int(xycen[0]-buffer):int(xycen[0]+buffer)]
 cutout_airy = psf_circ[0].data[int(0.5*psf_circ[0].data.shape[0])-buffer:int(0.5*psf_circ[0].data.shape[0])+buffer,int(0.5*psf_circ[0].data.shape[1])-buffer:int(0.5*psf_circ[0].data.shape[1])+buffer]
 cutout_hex = psf_hex[0].data[int(0.5*psf_hex[0].data.shape[0])-buffer:int(0.5*psf_hex[0].data.shape[0])+buffer,int(0.5*psf_hex[0].data.shape[1])-buffer:int(0.5*psf_hex[0].data.shape[1])+buffer]
