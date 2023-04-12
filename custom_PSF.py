@@ -7,8 +7,8 @@ from matplotlib.patches import Circle
 #Create Fizeau PSF
 
 phase=np.pi/2.0*0.0
-D=20000 #mm # 8250 # 10000 for 100x100 psf cutout
-padfactor=12.0 # 16
+D=20000 #mm # 8250 # scale the output array size with this; 10000 for 100x100 psf cutout
+padfactor=44.0 # 16 # scale the PSF with this
 deltaspacing = 100 #mm # 100
 centerx=D*padfactor/deltaspacing/2.0 #pixels
 centery=D*padfactor/deltaspacing/2.0 #pixels
