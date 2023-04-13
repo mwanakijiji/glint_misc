@@ -28,7 +28,6 @@ amp_circ, arg_circ, I_circ, aperture_circ = pickle.load(file)
 # close the file
 file.close()
 
-import ipdb; ipdb.set_trace()
 # read in waveguide mode profile
 '''
 S. Gross:
@@ -64,7 +63,6 @@ def pix2um(x):
 
 def um2pix(x):
     return x/0.2161
-
 
 # radius of first dark ring in um
 wavel = 1.55 # um

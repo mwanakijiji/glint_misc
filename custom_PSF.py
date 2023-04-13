@@ -174,6 +174,17 @@ def main():
     # from hexagonal subap
     field_complex_A_hex, I_PSF_hex, amp_OTF_hex, arg_OTF_hex = gen_PSF(hex_aperture_phase)
 
+    '''
+    S. Gross:
+
+    The waveguide modes have a 4sigma diameter of 8.3x7.6um. 
+    A simple Gaussian fit gives a 1/e2 diameter of 5.8x5.4um. 
+    Both at a wavelength of 1550nm.
+
+    The attached CSV file contains the corresponding intensity profile. 
+    The scale is 0.2161um per pixel.
+    '''
+
     # retrieve waveguide intensity and make cutout
     stem = '/Users/bandari/Documents/git.repos/glint_misc/notebooks/data/'
     open_file = open(stem + 'waveguide_intensity.pkl', "rb")
@@ -210,6 +221,7 @@ def main():
     circ_r_um = 1.22 * wavel * foc_length/D_lens
     circ_r_pix = um2pix(circ_r_um)
 
+    import ipdb; ipdb.set_trace()
     # define circle for scale in plots
     circ_cen_x = 0
     circ_cen_y = 0 
