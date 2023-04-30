@@ -15,7 +15,8 @@ import astropy.units as u
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
 
-stem = '/Users/bandari/Documents/git.repos/glint_misc/notebooks/data/'
+#stem = '/Users/bandari/Documents/git.repos/glint_misc/notebooks/data/'
+stem = '/suphys/espa3021/Documents/git.repos/glint_misc/notebooks/data/'
 
 ## BEGIN USER-DEFINED QUANTITIES
 
@@ -97,7 +98,7 @@ for file_name_wg in file_names_waveguide_modes:
 
     # ## Set up optics and calculate PSF (focal length implicit in optical system)
 
-    for foc_length in range(10,1001,10):
+    for foc_length in range(150,1001,10):
         
         # initial focal length of lens (um) in the substrate
         f_lens_substr = foc_length*u.micron # 284.664*u.micron
@@ -110,7 +111,7 @@ for file_name_wg in file_names_waveguide_modes:
         # pixel scale in terms of arcsec/pix
         pixelscale_ang = (scale_wg/f_lens_substr)*206265.*u.arcsec # (0.2161um/f [um] )*206265 arcsec /pix
 
-        steps_one_side = 5 # number of steps on one side of zero focus
+        steps_one_side = 4 # number of steps on one side of zero focus
         overl_int_array = np.nan*np.ones(int(2*steps_one_side)) # will collect overlap integrals
         defocus_values_array = np.nan*np.ones(int(2*steps_one_side)) # will collect defocus values (ito waves)
 
@@ -244,7 +245,7 @@ for file_name_wg in file_names_waveguide_modes:
             ax[1,1].set_ylabel('pixel')
             ax[1,1].add_patch(circ2)
 
-            ax[1,2].set_title('Waveguide mode (linear)')
+            ax[1,2].set_title('Waveguide mode I (linear)')
             ax[1,2].imshow(waveguide_cutout, extent=[-waveguide_cutout.shape[1]/2., waveguide_cutout.shape[1]/2., -waveguide_cutout.shape[0]/2., waveguide_cutout.shape[0]/2. ], alpha=1)
             ax[1,2].set_xlabel('pixel')
             ax[1,2].set_ylabel('pixel')
