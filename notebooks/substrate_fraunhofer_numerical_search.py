@@ -103,7 +103,7 @@ for file_name_wg in file_names_waveguide_modes:
     # ## Set up optics and calculate PSF (focal length implicit in optical system)
 
     for foc_length in range(200,1001,20):
-        
+                
         # initial focal length of lens (um) in the substrate
         f_lens_substr = foc_length*u.micron # 284.664*u.micron
         
@@ -345,15 +345,15 @@ for file_name_wg in file_names_waveguide_modes:
 
         # save interim data
         # put everything into a final dataframe
-        df_interim = pd.DataFrame(list(zip(list_f_lens,list_defocus,list_wavel,list_wg_modes,list_overlap_int_circ,list_overlap_int_hex)),
-                                  columns=['f_lens_substrate '+str(f_lens_substr.unit),'defocus (waves)','wavel '+str(wavel_substr.unit),'wg_mode','overl_int_circ','overlap_int_hex'])
+        df_interim = pd.DataFrame(list(zip(list_f_lens,list_defocus,list_wavel,list_wg_modes,list_overlap_int_circ,list_overlap_int_hex,list_overlap_int_circ_fresnel,list_overlap_int_hex_fresnel)),
+                                  columns=['f_lens_substrate '+str(f_lens_substr.unit),'defocus (waves)','wavel '+str(wavel_substr.unit),'wg_mode','overl_int_circ_fraun','overlap_int_hex_fraun','overl_int_circ_fresnel','overlap_int_hex_fresnel'])
         df_interim.to_csv('junk_df_interim.csv', sep=',', index=False)
 
 # put everything into a final dataframe
-df_final = pd.DataFrame(list(zip(list_f_lens,list_defocus,list_wavel,list_wg_modes,list_overlap_int_circ,list_overlap_int_hex)), 
-                  columns=['f_lens_substrate '+str(f_lens_substr.unit),'defocus (waves)','wavel '+str(wavel_substr.unit),'wg_mode','overl_int_circ','overlap_int_hex'])
+df_final = pd.DataFrame(list(zip(list_f_lens,list_defocus,list_wavel,list_wg_modes,list_overlap_int_circ,list_overlap_int_hex,list_overlap_int_circ_fresnel,list_overlap_int_hex_fresnel)),
+                                  columns=['f_lens_substrate '+str(f_lens_substr.unit),'defocus (waves)','wavel '+str(wavel_substr.unit),'wg_mode','overl_int_circ_fraun','overlap_int_hex_fraun','overl_int_circ_fresnel','overlap_int_hex_fresnel'])
 
-df_interim.to_csv('junk.csv', sep=',', index=False)
+df_final.to_csv('junk_final.csv', sep=',', index=False)
 #import ipdb; ipdb.set_trace()
 '''
 plt.plot(defocus_values_array,overl_int_array)

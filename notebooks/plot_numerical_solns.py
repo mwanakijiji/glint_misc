@@ -41,3 +41,4 @@ for wg_this in wg_unique_list:
     plt.legend()
     plt.title(wg_this + '\n' + 'blue: circular; red: hexagonal' + '\n' + 'numbers: defocus [waves]')
     plt.savefig('junk.png')
+    plt.clf()
