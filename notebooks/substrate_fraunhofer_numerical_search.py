@@ -15,8 +15,10 @@ import astropy.units as u
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
 
-#stem = '/Users/bandari/Documents/git.repos/glint_misc/notebooks/data/'
-stem = '/suphys/espa3021/Documents/git.repos/glint_misc/notebooks/data/'
+stem = '/Users/bandari/Documents/git.repos/glint_misc/notebooks/data/'
+#stem = '/suphys/espa3021/Documents/git.repos/glint_misc/notebooks/data/'
+
+dir_plots = './junk/'
 
 ## BEGIN USER-DEFINED QUANTITIES
 
@@ -70,6 +72,8 @@ list_wavel = []
 list_wg_modes = []
 list_overlap_int_circ = []
 list_overlap_int_hex = []
+list_overlap_int_circ_fresnel = []
+list_overlap_int_hex_fresnel = []
 
 for file_name_wg in file_names_waveguide_modes:
 
@@ -98,7 +102,7 @@ for file_name_wg in file_names_waveguide_modes:
 
     # ## Set up optics and calculate PSF (focal length implicit in optical system)
 
-    for foc_length in range(150,1001,10):
+    for foc_length in range(200,1001,20):
         
         # initial focal length of lens (um) in the substrate
         f_lens_substr = foc_length*u.micron # 284.664*u.micron
@@ -115,12 +119,12 @@ for file_name_wg in file_names_waveguide_modes:
         overl_int_array = np.nan*np.ones(int(2*steps_one_side)) # will collect overlap integrals
         defocus_values_array = np.nan*np.ones(int(2*steps_one_side)) # will collect defocus values (ito waves)
 
-        for step_foc in range(-int(steps_one_side),int(steps_one_side)):
+        for step_foc in range(0,1): #range(-int(steps_one_side),int(steps_one_side)):
 
             NWAVES = step_foc*0.1 # size of defocus ito waves
             #import ipdb; ipdb.set_trace()
             ###############################
-            # construct system: circular
+            # construct system: circular, Fraunhofer
             osys_circ = poppy.OpticalSystem()
             # lenslet (the factor of /(1.-stop_factor) in the radius stops 'up' the incoming wavefront by the stop_factor)
             lens = osys_circ.add_pupil(optic = poppy.ThinLens(name='lenslet', nwaves=NWAVES, radius=0.5*diam_lenslet/(1.-stop_factor)))
@@ -134,7 +138,7 @@ for file_name_wg in file_names_waveguide_modes:
                                     return_intermediates=True)
             #import ipdb; ipdb.set_trace()
             ###############################
-            # construct system: hexagonal
+            # construct system: hexagonal, Fraunhofer
             osys_hex = poppy.OpticalSystem()
             # lenslet (the factor of /(1.-stop_factor) in the radius stops 'up' the incoming wavefront by the stop_factor)
             lens = osys_hex.add_pupil(optic = poppy.ThinLens(name='lenslet', nwaves=NWAVES, radius=0.5*diam_lenslet/(1.-stop_factor)))
@@ -147,14 +151,44 @@ for file_name_wg in file_names_waveguide_modes:
                                     display_intermediates=False,
                                     return_intermediates=True)
             
-            #import ipdb; ipdb.set_trace()
+            ###############################
+            # construct system: circular, Fresnel
+            opt_sys_circ_fresnel = poppy.FresnelOpticalSystem(pupil_diameter=diam_lenslet, npix=512, beam_ratio=0.25)
+            ap = poppy.CircularAperture(radius=0.5*diam_lenslet)
+            m1 = poppy.QuadraticLens(f_lens=f_lens_substr, name='lenslet')
+
+            opt_sys_circ_fresnel.add_optic(ap, distance=0*u.micron)
+            opt_sys_circ_fresnel.add_optic(m1, distance=0*u.micron)
+            opt_sys_circ_fresnel.add_detector(pixelscale=scale_wg, fov_pixels=200, distance=f_lens_substr)
+            psf_circ_fresnel, all_wfs_circ_fresnel = opt_sys_circ_fresnel.calc_psf(wavelength=wavel_substr, 
+                                                       display_intermediates=False, 
+                                                       return_intermediates=True)
+            
+            ###############################
+            # construct system: hexagonal, Fresnel
+            opt_sys_hex_fresnel = poppy.FresnelOpticalSystem(pupil_diameter=diam_lenslet, npix=512, beam_ratio=0.25)
+            ap = poppy.HexagonAperture(flattoflat=diam_lenslet, name='hex')
+            m1 = poppy.QuadraticLens(f_lens=f_lens_substr, name='lenslet')
+
+            opt_sys_hex_fresnel.add_optic(ap, distance=0*u.micron)
+            opt_sys_hex_fresnel.add_optic(m1, distance=0*u.micron)
+            opt_sys_hex_fresnel.add_detector(pixelscale=scale_wg, fov_pixels=200, distance=f_lens_substr)
+            psf_hex_fresnel, all_wfs_hex_fresnel = opt_sys_hex_fresnel.calc_psf(wavelength=wavel_substr, 
+                                                       display_intermediates=False, 
+                                                       return_intermediates=True)
         
             
-            print('shape:',np.shape(all_wfs_circ[-1].intensity))
+            #print('shape:',np.shape(all_wfs_circ[-1].intensity))
 
+
+            ###############################
             # define fields for overlap integral (should just be 200x200 arrays)
             input_field_circ = all_wfs_circ[-1].amplitude * np.exp(1j*all_wfs_circ[-1].phase)
             input_field_hex = all_wfs_hex[-1].amplitude * np.exp(1j*all_wfs_hex[-1].phase)
+
+            input_field_circ_fresnel = all_wfs_circ_fresnel[-1].amplitude * np.exp(1j*all_wfs_circ_fresnel[-1].phase)
+            input_field_hex_fresnel = all_wfs_hex_fresnel[-1].amplitude * np.exp(1j*all_wfs_hex_fresnel[-1].phase)
+
             mode_field = np.sqrt(waveguide_cutout) # sqrt because cutout is the intensity I, and we want E
 
             # check scaling is right
@@ -164,9 +198,14 @@ for file_name_wg in file_names_waveguide_modes:
             # overlap integral
             overlap_int_complex_circ = np.sum(input_field_circ*mode_field) / np.sqrt( np.sum(np.abs(mode_field)**2) * np.sum(np.abs(input_field_circ)**2) )
             overlap_int_complex_hex = np.sum(input_field_hex*mode_field) / np.sqrt( np.sum(np.abs(mode_field)**2) * np.sum(np.abs(input_field_hex)**2) )
-            
+            overlap_int_complex_circ_fresnel = np.sum(input_field_circ_fresnel*mode_field) / np.sqrt( np.sum(np.abs(mode_field)**2) * np.sum(np.abs(input_field_circ_fresnel)**2) )
+            overlap_int_complex_hex_fresnel = np.sum(input_field_hex_fresnel*mode_field) / np.sqrt( np.sum(np.abs(mode_field)**2) * np.sum(np.abs(input_field_hex_fresnel)**2) )
+
+
             overlap_int_circ = np.abs(overlap_int_complex_circ)**2
             overlap_int_hex = np.abs(overlap_int_complex_hex)**2
+            overlap_int_circ_fresnel = np.abs(overlap_int_complex_circ_fresnel)**2
+            overlap_int_hex_fresnel = np.abs(overlap_int_complex_hex_fresnel)**2
 
             # print params
             string_params = 'Waveguide mode: '+str(os.path.basename(file_name_wg))+'\n' + \
@@ -181,8 +220,10 @@ for file_name_wg in file_names_waveguide_modes:
                             'Radius of first dark Airy ring (pix): '+str(circ_r_pix)+'\n' + \
                             '(white circle: first dark Airy ring, as sanity check)'+'\n' + \
                             '---------------------'+'\n' + \
-                            'OVERLAP INTEGRAL (circ): ' + str(overlap_int_circ)+'\n' + \
-                            'OVERLAP INTEGRAL (hex): ' + str(overlap_int_hex)+'\n' + \
+                            'OVERLAP INTEGRAL (circ, Fraun): ' + str(overlap_int_circ)+'\n' + \
+                            'OVERLAP INTEGRAL (hex, Fraun): ' + str(overlap_int_hex)+'\n' + \
+                            'OVERLAP INTEGRAL (circ, Fresnel): ' + str(overlap_int_circ_fresnel)+'\n' + \
+                            'OVERLAP INTEGRAL (hex, Fresnel): ' + str(overlap_int_hex_fresnel)+'\n' + \
                             '---------------------'
                     
                 
@@ -196,14 +237,18 @@ for file_name_wg in file_names_waveguide_modes:
             list_wg_modes.append(os.path.basename(file_name_wg))
             list_overlap_int_circ.append(overlap_int_circ)
             list_overlap_int_hex.append(overlap_int_hex)
+            list_overlap_int_circ_fresnel.append(overlap_int_circ_fresnel)
+            list_overlap_int_hex_fresnel.append(overlap_int_hex_fresnel)
 
-            
+            #import ipdb; ipdb.set_trace()
             #########################
             ## plotting
             
             # intensities for plotting
             I_PSF_circ = all_wfs_circ[-1].intensity
             I_PSF_hex = all_wfs_hex[-1].intensity
+            I_PSF_circ_fresnel = all_wfs_circ_fresnel[-1].intensity
+            I_PSF_hex_fresnel = all_wfs_hex_fresnel[-1].intensity
             
             # define circle for scale in plots
             circ_cen_x = 0
@@ -211,9 +256,12 @@ for file_name_wg in file_names_waveguide_modes:
             circ1 = Circle((circ_cen_x,circ_cen_y),radius=circ_r_pix/u.pix,color='white',fill=False)
             circ2 = Circle((circ_cen_x,circ_cen_y),radius=circ_r_pix/u.pix,color='white',fill=False)
             circ3 = Circle((circ_cen_x,circ_cen_y),radius=circ_r_pix/u.pix,color='white',fill=False)
+            circ4 = Circle((circ_cen_x,circ_cen_y),radius=circ_r_pix/u.pix,color='white',fill=False)
+            circ5 = Circle((circ_cen_x,circ_cen_y),radius=circ_r_pix/u.pix,color='white',fill=False)
             
             plt.clf()
-            fig, ax = plt.subplots(nrows=2, ncols=3, figsize=(20,10), layout='constrained')
+            fig, ax = plt.subplots(nrows=3, ncols=3, figsize=(30,10), layout='constrained')
+            #fig.tight_layout()
 
             plt.suptitle(string_params, x=0.1, horizontalalignment='left')
             ax[0,0].set_title('Circular subap')
@@ -232,14 +280,14 @@ for file_name_wg in file_names_waveguide_modes:
             ax[0,2].plot(np.divide(waveguide_cutout[int(buffer),:],np.max(waveguide_cutout[int(buffer),:])),color='green',label='waveguide mode')
             ax[0,2].legend()
 
-            ax[1,0].set_title('I (log)')
+            ax[1,0].set_title('I, Fraunhofer (log)')
             ax[1,0].imshow(I_PSF_circ, extent=[-I_PSF_circ.shape[1]/2., I_PSF_circ.shape[1]/2., -I_PSF_circ.shape[0]/2., I_PSF_circ.shape[0]/2. ], alpha=1, norm='log')
             ax[1,0].set_xlabel('pixel')
             ax[1,0].set_ylabel('pixel')
             ax[1,0].add_patch(circ1)
 
 
-            ax[1,1].set_title('I (log)')
+            ax[1,1].set_title('I, Fraunhofer (log)')
             ax[1,1].imshow(I_PSF_hex, extent=[-I_PSF_hex.shape[1]/2., I_PSF_hex.shape[1]/2., -I_PSF_hex.shape[0]/2., I_PSF_hex.shape[0]/2. ], alpha=1, norm='log')
             ax[1,1].set_xlabel('pixel')
             ax[1,1].set_ylabel('pixel')
@@ -250,6 +298,21 @@ for file_name_wg in file_names_waveguide_modes:
             ax[1,2].set_xlabel('pixel')
             ax[1,2].set_ylabel('pixel')
             ax[1,2].add_patch(circ3)
+
+            ax[2,0].set_title('I, Fresnel (log)')
+            ax[2,0].imshow(I_PSF_circ_fresnel, extent=[-I_PSF_circ_fresnel.shape[1]/2., I_PSF_circ_fresnel.shape[1]/2., -I_PSF_circ_fresnel.shape[0]/2., I_PSF_circ_fresnel.shape[0]/2. ], alpha=1, norm='log')
+            ax[2,0].set_xlabel('pixel')
+            ax[2,0].set_ylabel('pixel')
+            ax[2,0].add_patch(circ4)
+
+
+            ax[2,1].set_title('I, Fresnel (log)')
+            ax[2,1].imshow(I_PSF_hex_fresnel, extent=[-I_PSF_hex_fresnel.shape[1]/2., I_PSF_hex_fresnel.shape[1]/2., -I_PSF_hex_fresnel.shape[0]/2., I_PSF_hex_fresnel.shape[0]/2. ], alpha=1, norm='log')
+            ax[2,1].set_xlabel('pixel')
+            ax[2,1].set_ylabel('pixel')
+            ax[2,1].add_patch(circ5)
+
+            ax[2,2].axis('off')
 
             '''
             secax = ax[1,0].secondary_xaxis('top', functions=(pix2um, um2pix))
@@ -273,7 +336,8 @@ for file_name_wg in file_names_waveguide_modes:
             secay.set_ylabel('physical (um)')
             '''
 
-            plt.savefig('./plots/foc_'+str(f_lens_substr.value)+'_'+\
+            
+            plt.savefig(dir_plots+'foc_'+str(f_lens_substr.value)+'_'+\
                         'defoc_waves_'+str(NWAVES)+'_'+\
                         'wavel_' + str(wavel_substr.value) + '_'+\
                         'wg_' + str(os.path.basename(file_name_wg))+ '.png')
@@ -290,7 +354,7 @@ df_final = pd.DataFrame(list(zip(list_f_lens,list_defocus,list_wavel,list_wg_mod
                   columns=['f_lens_substrate '+str(f_lens_substr.unit),'defocus (waves)','wavel '+str(wavel_substr.unit),'wg_mode','overl_int_circ','overlap_int_hex'])
 
 df_interim.to_csv('junk.csv', sep=',', index=False)
-import ipdb; ipdb.set_trace()
+#import ipdb; ipdb.set_trace()
 '''
 plt.plot(defocus_values_array,overl_int_array)
 plt.axvline(x=0,linestyle=':',color='k')
