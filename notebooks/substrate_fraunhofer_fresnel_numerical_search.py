@@ -31,7 +31,10 @@ scale_wg = 0.2161*u.micron/u.pix
 # IrisAO has pitch 606 um --> 0.9 ratio: 545.4 um
 diam_lenslet = 58.275*u.micron # 66.*u.micron
 
-subaru_pupil = True # if true, secondary obscuration added in
+# if true, secondary obscuration added in; which I think is bogus, 
+# because subapertures should be sampled across the pupil in unobscured
+# regions; ONLY USE TRUE IF YOU KNOW WHAT YOU'RE DOING
+subaru_pupil = False
 
 # smallest fractional distance between (projected) DM hexagonal subaperture
 # and outer edge of subaperture that passes light
