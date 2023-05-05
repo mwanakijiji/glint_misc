@@ -40,5 +40,5 @@ for wg_this in wg_unique_list:
     plt.ylabel('overlap integral')
     plt.legend()
     plt.title(wg_this + '\n' + 'blue: circular; red: hexagonal' + '\n' + 'numbers: defocus [waves]')
-    plt.savefig('junk.png')
+    plt.savefig('junk_' + 'wg_' +str(wg_this) +  'defocus_' +str(defocus_this) + '.pdf')
     plt.clf()
