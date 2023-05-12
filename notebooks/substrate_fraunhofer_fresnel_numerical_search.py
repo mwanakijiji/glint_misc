@@ -54,7 +54,7 @@ wavel_air = 1.55*u.micron
 grid_foc_length = range(300,600,20)
 
 # steps in defocus (tenths of a wave)
-grid_defocus = range(0,5)
+grid_defocus = range(0,1)
 
 '''
 file_names_waveguide_modes = [stem + 'AF45_100x_Zeiss_300um_1550nm_1000mmmin_67pt5nJ_csv.pkl', 
