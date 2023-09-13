@@ -1,0 +1,2206 @@
+WEBVTT
+
+1
+00:00:08.550 --> 00:00:09.960
+Barnaby Norris: Yep, good idea.
+
+2
+00:00:10.760 --> 00:00:17.500
+Eckhart Spalding: Okay, so welcome everyone to the planning meeting for the Glen's hardware upgrade
+
+3
+00:00:17.790 --> 00:00:27.469
+Eckhart Spalding: in 2023 B. So first, why don't I give you a highest level sense of what it is that we were hoping to do?
+
+4
+00:00:27.990 --> 00:00:31.480
+In the coming weeks and months? So
+
+5
+00:00:31.600 --> 00:00:38.880
+Eckhart Spalding: Glenn, I mean, I'm I'm sure you're familiar with glint. But the the objective now is for us to install a
+
+6
+00:00:39.010 --> 00:00:47.890
+Eckhart Spalding: a new chip that can do some new things compared to the old chip. And there's going to be some optics that we would like to change out
+
+7
+00:00:47.980 --> 00:00:58.230
+Eckhart Spalding: from the glint test bench, and if possible, also a couple of alignment mirrors just upstream of the of the the injected beam.
+
+8
+00:00:58.510 --> 00:01:08.890
+Eckhart Spalding: So so the highest level goals are remove Glenn from the bench and set up in a helo lab where Steph Barnaby and I can work on it.
+
+9
+00:01:09.290 --> 00:01:24.330
+Eckhart Spalding: We were hoping to work on it during the the gap between observing runs in October and I mentioned the 2 alignment mirrors in the Ir bench. I'll show you a diagram of those 2
+
+10
+00:01:24.390 --> 00:01:30.499
+Eckhart Spalding: and where they're located, and then, really install glint and our ambitious
+
+11
+00:01:31.130 --> 00:01:38.459
+as a deadline, for that is by October twentieth, so we want to be in time for those observing runs in October and November.
+
+12
+00:01:38.740 --> 00:01:47.999
+Eckhart Spalding: The fallback. If we don't make that is to use the the gap, and observing runs in the middle of November.
+
+13
+00:01:48.310 --> 00:01:54.070
+Eckhart Spalding: So at the bottom of this slide I have cut out of a a little gantt chart
+
+14
+00:01:54.480 --> 00:02:06.059
+where I use the the slides that were shown in the Stexio, all hands meeting to indicate. When you have observing runs, those are the dark red
+
+15
+00:02:06.100 --> 00:02:13.100
+Eckhart Spalding: and then the light red were indicated to be times when it's difficult to make hardware upgrades
+
+16
+00:02:13.320 --> 00:02:35.300
+Eckhart Spalding: because the the sexio folks have have other constraints on their their time and and whatnot. But but skexio is not actually on sky. So from our end we have some off the shelf optics that still need to come in we were hoping to just have those shipped directly to Hilo.
+
+17
+00:02:35.680 --> 00:02:52.479
+Eckhart Spalding: and the the chip is in the final design stages right now and will be fabricated soon. And I'll I'll repeat this this again chart on on the following slides. But
+
+18
+00:02:52.490 --> 00:02:57.429
+Eckhart Spalding: basically we would look at a Clint removal around October 6 or so.
+
+19
+00:02:57.480 --> 00:03:08.650
+Eckhart Spalding: Upgrade things in the lab, and this purple stretch reinstall, and then hope to use on skytime. In yeah, in October, November. So if I break that down a little bit.
+
+20
+00:03:08.850 --> 00:03:12.360
+Eckhart Spalding: the first 5 steps of this general sequence.
+
+21
+00:03:12.780 --> 00:03:26.760
+Eckhart Spalding: would be. Yeah. I already mentioned these ship optics directly to Hilo. Barnaby, Steph and I were hoping to travel. Maybe October sixth. Steph is is graduating a couple of days before.
+
+22
+00:03:26.820 --> 00:03:36.999
+Eckhart Spalding: And Barnaby is planning on returning to Australia earlier than Steph and I. We would stay behind and work on the clients, optics
+
+23
+00:03:37.120 --> 00:03:40.040
+Eckhart Spalding: and depending on the timing constraints.
+
+24
+00:03:40.370 --> 00:03:46.069
+Eckhart Spalding: On Scexo side we were hoping to open the ir bench
+
+25
+00:03:46.150 --> 00:04:04.269
+Eckhart Spalding: and install Newport. Conex mounts just before the injection beam again in that October gap following that you know, Steph and I will just continue to troubleshoot glint alignment in the lab with an artificial source.
+
+26
+00:04:04.330 --> 00:04:10.640
+Eckhart Spalding: And then reinstall on the summit. We do need to make sure that we understand
+
+27
+00:04:10.750 --> 00:04:19.180
+Eckhart Spalding: exactly how we're going to plug the fiber going from the glint chip to the new C red one imager for dispersed imaging.
+
+28
+00:04:19.370 --> 00:04:32.699
+Eckhart Spalding: and then do on the mountain tests with an artificial source as insofar as as possible. And what we are hoping to observe on sky first of all is just a bright star as an engineering target.
+
+29
+00:04:32.850 --> 00:04:38.689
+Eckhart Spalding: And then there are a couple of targets that are good, low contrast, binary system targets
+
+30
+00:04:38.890 --> 00:04:50.919
+Eckhart Spalding: that we'd like to observe after that. So we looked at the subaru schedule for 20 twenty-threeb. And it seemed like there is engineering time on these nights
+
+31
+00:04:51.150 --> 00:04:55.380
+Eckhart Spalding: or possibilities of taking engineering on sky data
+
+32
+00:04:55.610 --> 00:05:03.919
+Eckhart Spalding: and you can tell us if you know how how well or how badly those dates work. Or if there's a possibility on some other date or whatever.
+
+33
+00:05:04.300 --> 00:05:07.539
+Eckhart Spalding: So that's just the general sequence of events.
+
+34
+00:05:07.910 --> 00:05:18.649
+Eckhart Spalding: Basically, what's going to change with Glenn proper is the chip like I mentioned the chip is way up in the top right corner in these plots
+
+35
+00:05:19.140 --> 00:05:20.760
+and
+
+36
+00:05:21.140 --> 00:05:25.089
+Eckhart Spalding: to accommodate that new chip. We are
+
+37
+00:05:25.270 --> 00:05:28.890
+removing the mount that it's on and replacing it with another design.
+
+38
+00:05:29.230 --> 00:05:33.609
+Eckhart Spalding: And the the mask mount. The input is going to be taken out.
+
+39
+00:05:33.710 --> 00:05:44.209
+Eckhart Spalding: And then we're going to replace the Irsa Odm with the Boston micro machines. I believe the one that Barnaby was just referring to at the beginning of the meeting.
+
+40
+00:05:44.320 --> 00:05:55.959
+Eckhart Spalding: And and then there's just some refocusing optics to replace, to accommodate that. So a lot of space will be freed up in the sort of the middle of the bench just because we're removing that initial mount.
+
+41
+00:05:57.860 --> 00:06:05.990
+Eckhart Spalding: Physically. The the components we want to remove from the bench are obviously the the glint box, and then we'll also have to retrieve the
+
+42
+00:06:06.180 --> 00:06:08.910
+Eckhart Spalding: Glenn computer, which I don't have a picture of
+
+43
+00:06:09.240 --> 00:06:14.230
+that, I'm told, is right below that old spectrum graph off to the left.
+
+44
+00:06:15.250 --> 00:06:28.510
+Eckhart Spalding: and we'll continue to use that glint computer for the time being for control the 2 mirrors that I mentioned in the Ir bench are the ones I've indicated here with the arrows and circles.
+
+45
+00:06:28.740 --> 00:06:40.939
+Eckhart Spalding: Historically, it's been difficult to keep them aligned once they are aligned. And so we'd like to use one of these conex mounts that have their own integrated controller.
+
+46
+00:06:41.270 --> 00:06:47.459
+Eckhart Spalding: To to position those mirrors on. It does require a windows machine, however.
+
+47
+00:06:48.150 --> 00:06:57.050
+Eckhart Spalding:  yeah. So what what we would need on our end is, first of all, obviously optical lab space.
+
+48
+00:06:57.390 --> 00:07:11.239
+Eckhart Spalding: And we want to run our own computers. First of all, just starting with the the old windows computer to control our pupil plane and focal plane cameras and the Boston DM,
+
+49
+00:07:11.390 --> 00:07:24.120
+Eckhart Spalding: we would have a need for an artificial source, for in lab tests. and then, once we're ready to reinstall on the summit. these are the additional
+
+50
+00:07:24.220 --> 00:07:26.190
+Eckhart Spalding: and
+
+51
+00:07:26.220 --> 00:07:33.490
+Eckhart Spalding: volumes that that we would need to accommodate controllers. So there are
+
+52
+00:07:33.840 --> 00:07:43.300
+Eckhart Spalding: the 2 controllers for the Conex Mounts that I mentioned to you are a couple goniometers. These integrated controllers are just these really small boxes.
+
+53
+00:07:43.440 --> 00:07:56.430
+Eckhart Spalding: And then a larger Pd xc. Inertial stage controller for a rotation stage. and Surya Seki, Ds. 1, 1, 2 times, 2
+
+54
+00:07:56.740 --> 00:07:59.700
+Eckhart Spalding: for translation stages on the Mount.
+
+55
+00:07:59.990 --> 00:08:16.640
+Barnaby Norris: Sorry to interrupt something that you might be glad to hear is the those connectics once, even though they say the Gui is only available for windows. In practice, we just control them from programs directly using the USB serial. And so that actually works fine from Linux. So you don't have to worry about making windows stuff available.
+
+56
+00:08:17.330 --> 00:08:32.059
+Julien Lozi: No one has demonstrated the Tps mounts can be controlled with Linux yet. So if you guys want to try, go for it. But I know the Mac team had some issues and ended up using a windows nook. I ended up just
+
+57
+00:08:32.210 --> 00:08:37.869
+Julien Lozi: using what they had without windows. Nuke. I know some connects.
+
+58
+00:08:38.000 --> 00:08:42.940
+Julien Lozi: and old Rotation Mount was not even visible with Linux.
+
+59
+00:08:44.150 --> 00:08:45.170
+So
+
+60
+00:08:45.440 --> 00:08:50.920
+Julien Lozi: there is, there is some. Yeah. So if you want to try, go for it. But
+
+61
+00:08:51.740 --> 00:09:02.549
+Barnaby Norris: there's no guarantees. According to the the website, they say it's the same command set as the conic stages we use for you know the linear and rotation stages.
+
+62
+00:09:02.580 --> 00:09:04.500
+Barnaby Norris: But maybe
+
+63
+00:09:04.580 --> 00:09:11.519
+Barnaby Norris: let me something there, or you saying it's not so much the command set. It's actually the hardware level communication. But
+
+64
+00:09:11.720 --> 00:09:18.980
+Julien Lozi: II don't know about the tpt. It's just that no one tried. We ended up just using the windows computer for that.
+
+65
+00:09:19.090 --> 00:09:23.280
+Barnaby Norris: Right? Okay, well, that's I'll note that as something we need to follow up.
+
+66
+00:09:25.950 --> 00:09:30.979
+Eckhart Spalding: Okay, thank you, Barnaby. and I think this might be.
+
+67
+00:09:31.230 --> 00:09:48.210
+Eckhart Spalding: this might be my last slides. So this is just a series of questions we can get to these in a moment. But first of all, II just like to get a sense from the schedio folks. How feasible this plan is! What what do they think of it, as I've explained it so far.
+
+68
+00:09:51.010 --> 00:09:58.100
+Julien Lozi: so there is a lot of different points. first of all, let's go back to first slide.
+
+69
+00:10:03.570 --> 00:10:06.079
+Julien Lozi: Oh, I mean, yes, this one. So
+
+70
+00:10:07.600 --> 00:10:14.320
+Julien Lozi:  okay. So October 20, sixth is not
+
+71
+00:10:14.330 --> 00:10:15.540
+Julien Lozi: available
+
+72
+00:10:17.570 --> 00:10:21.460
+Julien Lozi: for your test cause. It's not a Skxo engineering night.
+
+73
+00:10:23.000 --> 00:10:26.929
+Julien Lozi: So it would be only October 20. Third, the first half.
+
+74
+00:10:27.330 --> 00:10:28.180
+Eckhart Spalding: Okay.
+
+75
+00:10:29.080 --> 00:10:33.029
+Julien Lozi: in November 2 and 3. That's fine.
+
+76
+00:10:33.570 --> 00:10:37.040
+Julien Lozi: November 18 is also not a scaxo night.
+
+77
+00:10:38.870 --> 00:10:48.750
+Eckhart Spalding: Okay? I was thinking that maybe if it's like an A. 188 and engineering night, or something like that, that there might be some possibility figure back. But if if not. That's fine.
+
+78
+00:10:49.360 --> 00:10:56.369
+Julien Lozi: So these 2 nights, I think, Ninefold, we're from central nights, and we need
+
+79
+00:10:56.810 --> 00:11:04.180
+Julien Lozi: the infrared light to go to carries for a characterization of the sensor. So yeah, that's not possible.
+
+80
+00:11:05.520 --> 00:11:15.010
+Julien Lozi: There is also some rich engineering, but in that case they are doing cabin rich also, which is not compatible with cleans. But anyway. So
+
+81
+00:11:15.690 --> 00:11:21.350
+Julien Lozi: yeah, so there's only yeah. October 20, third, the first half, and then November
+
+82
+00:11:21.830 --> 00:11:27.640
+Julien Lozi: 2 and 3, first half where you could potentially take data.
+
+83
+00:11:29.220 --> 00:11:34.530
+Julien Lozi: I mean to me, this is a very ambitious plan.
+
+84
+00:11:35.110 --> 00:11:43.170
+Barnaby Norris:  I think context is this is definitely this is ambitious. And this is the like, you know
+
+85
+00:11:43.200 --> 00:12:08.870
+Barnaby Norris: the the, the plan. A one key thing we need to do because there's so you know. Obviously, there's lots of like supporting runs and stuff like all the shaded stuff. Getting one of the key goals. In fact, the really key goal is to get it on the bench. So we can actually get, you know, the software and stuff set up cause we wanna actually be able to do tests and things. So even if it doesn't work out to do on sky nights on those nights, that's you know
+
+86
+00:12:08.870 --> 00:12:17.949
+Barnaby Norris: that that's okay. The. The the main thing is to get it on the bench at a hardware level. So then, you know, remotely, in the day we can do lab experiments with it.
+
+87
+00:12:19.690 --> 00:12:21.179
+Julien Lozi: Okay,
+
+88
+00:12:22.580 --> 00:12:23.480
+Julien Lozi: yes.
+
+89
+00:12:24.580 --> 00:12:28.879
+Julien Lozi: So if I look at the calendar, there is a training on the 18
+
+90
+00:12:29.890 --> 00:12:31.280
+Julien Lozi: October 18,
+
+91
+00:12:32.560 --> 00:12:36.680
+Julien Lozi: and so ideally, I would want to see clean back
+
+92
+00:12:37.440 --> 00:12:38.829
+Julien Lozi: before that
+
+93
+00:12:41.540 --> 00:12:49.040
+Julien Lozi: before craning women who observe on the 20 third. So yeah. think
+
+94
+00:12:50.340 --> 00:12:56.459
+Julien Lozi: craning back on the instrument under 16 or 17 would be the best option.
+
+95
+00:12:57.460 --> 00:13:05.499
+Julien Lozi:  so that gives you like 10 days right? Something like that.
+
+96
+00:13:08.920 --> 00:13:13.299
+Julien Lozi:  So if you keep going in the slides
+
+97
+00:13:15.350 --> 00:13:16.810
+Julien Lozi: had more comments
+
+98
+00:13:17.690 --> 00:13:29.510
+Julien Lozi:  So can you go back 1 s. So the
+
+99
+00:13:29.540 --> 00:13:34.180
+Julien Lozi: why? Why, you guys removing the alignment mount for the mask, you don't need that.
+
+100
+00:13:34.820 --> 00:13:41.009
+Eckhart Spalding: Oh, so so the that mask is integrated onto the
+
+101
+00:13:41.440 --> 00:13:45.270
+Eckhart Spalding: onto the Mla. That's just upstream of the chip.
+
+102
+00:13:45.840 --> 00:13:48.410
+Julien Lozi: Oh, okay, there is no mask any more. It's
+
+103
+00:13:48.670 --> 00:13:51.189
+Julien Lozi: just the periscope lens.
+
+104
+00:13:51.660 --> 00:13:53.020
+Julien Lozi: Right? Okay.
+
+105
+00:13:53.740 --> 00:14:06.799
+Barnaby Norris: yeah, it's gonna make whole step of alignment. So the the the mark lens array actually is printed onto a substrate that has a being lithography mask calls on it.
+
+106
+00:14:07.020 --> 00:14:18.480
+Barnaby Norris: so that should. So it actually don't need that pupil plane. But the reimaging optics is too hard to change right now. So it just has a random, empty pupil plane with a mask is just because
+
+107
+00:14:19.440 --> 00:14:20.250
+Julien Lozi: yes.
+
+108
+00:14:21.270 --> 00:14:28.040
+Julien Lozi: And so what's what's wrong with the the Picomoro mounts that you have right now.
+
+109
+00:14:28.990 --> 00:14:31.280
+Barnaby Norris: They don't, because they're open loop.
+
+110
+00:14:31.320 --> 00:14:40.739
+Barnaby Norris: They don't have any repeat ability. So it's R. Makes it really hard to align. Even if you can look at a camera and sort of see it move around. There's no.
+
+111
+00:14:40.770 --> 00:14:50.270
+Barnaby Norris: But they're basically the step size is somewhat random, because they're just like a stick slip thing. So the step size. When you press, move a thousand steps it's a factor of 2 randomness on it.
+
+112
+00:14:51.550 --> 00:14:54.310
+Barnaby Norris: So we need to close. We need to replace with closed loop mounts.
+
+113
+00:14:54.420 --> 00:14:55.220
+Julien Lozi: Okay?
+
+114
+00:14:56.430 --> 00:14:57.740
+Julien Lozi: Yeah. Okay.
+
+115
+00:15:01.140 --> 00:15:06.380
+Julien Lozi: Yeah. What I'm the most curious about is that chain man for the
+
+116
+00:15:08.410 --> 00:15:10.429
+Julien Lozi: for the chip
+
+117
+00:15:12.210 --> 00:15:18.429
+Barnaby Norris: that's been eckard and Steph have been immersed in that for the last few weeks or months.
+
+118
+00:15:18.590 --> 00:15:28.390
+Barnaby Norris: doing every possible trade study and optimization of everything. So that's why it's a combination of 3 manufacturers. It's a
+
+119
+00:15:28.640 --> 00:15:45.259
+Barnaby Norris: it was very hard to actually find things that went to spec that we needed and was super stable and fitted. So that's I'm sure, Stephan, and Eckart could probably give you a a long 3 h presentation on that.
+
+120
+00:15:45.550 --> 00:15:48.019
+Eckhart Spalding: The the perpetrator is mostly Steph.
+
+121
+00:15:50.000 --> 00:15:54.030
+Julien Lozi: Well, do you have a slide detailing a bit more what you guys have there
+
+122
+00:15:54.690 --> 00:15:56.110
+Eckhart Spalding: for the mount?
+
+123
+00:15:56.130 --> 00:16:01.200
+Eckhart Spalding: Don't. Let's see, I don't have that in a slide
+
+124
+00:16:01.830 --> 00:16:04.309
+Eckhart Spalding: def. And I have a CAD drawing.
+
+125
+00:16:04.860 --> 00:16:09.120
+Eckhart Spalding: Ii can try starting it up, and that might take me a minute, though.
+
+126
+00:16:09.970 --> 00:16:12.669
+Barnaby Norris: I mean, what about that? Pdf, that I think
+
+127
+00:16:13.510 --> 00:16:17.630
+Barnaby Norris: you had on slack? They just had some screenshots from
+
+128
+00:16:18.550 --> 00:16:45.780
+Barnaby Norris: just to fill in Julian on on basic. What's going on is one of the main things right big. One of the biggest problems right now, with all of glint, is the alignment stability. Right? That's the single biggest issue we have. And those stages we have suck they're not. They're mounted on their side, and they're spring loaded. And so what we've got here is, first of all, it's grav. The gravity vector goes down now. So there's a bracket which you can't see. That is the right angle bracket. So it's actually, you know, mounted the right way up, which is a rather nice improvement.
+
+129
+00:16:45.780 --> 00:17:08.460
+Barnaby Norris: the and so the back there it looks like there's lots of stuff there, almost everything you're seeing there behind. It is just a single Thor labs travel, Max. Stage. The reason it's that big is the only one they make with good enough repeatability is also a 10 travel which we don't need. So that's actually all one thing. And then you'll see when we get the new Pdf.
+
+130
+00:17:08.460 --> 00:17:36.319
+Barnaby Norris: the other stages. There are just translation, and rotation. And those top, the other things actually goniometers. And so what they are is you've got the center of rotation is the center of the micro lens array so previously. Well, we couldn't actually tip tilt them, which is one of the biggest issues, cause you couldn't make the micro lens flats to the wave front coming in. So you always had the a path offset. But also, what's nice is the goniometers the center of rotation instead of microlens array so you can add tip or tilt.
+
+131
+00:17:36.320 --> 00:17:40.180
+Barnaby Norris: and it doesn't change the path lengths. That.
+
+132
+00:17:42.120 --> 00:17:42.800
+Julien Lozi: Okay?
+
+133
+00:17:45.130 --> 00:17:51.100
+Vincent Deo: Sorry when when you said, there's a bracket. And it's the gravity vector, is the right way. What do you mean?
+
+134
+00:17:51.510 --> 00:18:16.560
+Barnaby Norris: So the stages really want to be put the right way up right? So, in other words, on the screen there, you know, vertical on the screen is towards the sky. The way they are right now, because the breadboards mounted sideways right the way it is right now is they come out of the screen towards us. So all the way pulls downwards, and the stages aren't meant to operate that way. So they sag, and they're non repeatable
+
+135
+00:18:16.560 --> 00:18:24.480
+Barnaby Norris: and stuff like that. So now it's actually mounted the way up that you know. Got intended.
+
+136
+00:18:25.160 --> 00:18:36.800
+Vincent Deo: Okay, but the the backing plates, the main board is still vertical on the screen. What you don't see there? Yeah, it's not on the cat drawing, but just down the bottom. There is just a regular right angle, you know, aluminium bracket
+
+137
+00:18:37.030 --> 00:18:38.330
+Vincent Deo: right on. Yeah. Okay.
+
+138
+00:18:41.400 --> 00:18:46.000
+Barnaby Norris: so so def or echo, maybe. Do you want to talk through the different components? There?
+
+139
+00:18:46.710 --> 00:18:56.359
+Barnaby Norris: Yeah, I'm happy to. Oh, the screenshot. Sorry. I just realized the screenshot. A couple of showing that's got. Yeah, that's the travel, Max. But you found the we're actually liking the Kx.
+
+140
+00:18:56.600 --> 00:18:58.629
+Barnaby Norris: whatever it is. Xy stage.
+
+141
+00:18:59.650 --> 00:19:02.160
+Stephanie Rossini-Bryson: I think the screenshot he was showing was
+
+142
+00:19:02.470 --> 00:19:15.719
+Stephanie Rossini-Bryson: travel. Max was even bigger than the screenshot. But yeah, the one that's in here is I think the Kx or the which is, they're both of similar size.
+
+143
+00:19:16.200 --> 00:19:20.179
+Stephanie Rossini-Bryson: but yeah. So the the top 2. So I guess
+
+144
+00:19:20.220 --> 00:19:28.339
+Barnaby Norris: I don't have a cursor, do I? Can I somehow annotate? Yeah, if if you go to view options at the top, there's a hidden annotate thing. Yep.
+
+145
+00:19:28.430 --> 00:19:38.690
+Stephanie Rossini-Bryson: So those 2 that I've circled this 2 goniometers there, which, as Bonnie said, they are the point at which they rotate, exactly aligns with the face of the chip.
+
+146
+00:19:38.710 --> 00:19:43.729
+Stephanie Rossini-Bryson: So that and those are responsible for I think it was role. And
+
+147
+00:19:43.780 --> 00:19:58.159
+Stephanie Rossini-Bryson: yo your I can't remember. And then this one below it. That's the rotation stage. So the top 2 goniometers. They're from Newport, their connects ones, and they have their own controllers. And then the rotation stage is from 4 labs.
+
+148
+00:19:58.690 --> 00:20:00.179
+Stephanie Rossini-Bryson: and then we have
+
+149
+00:20:00.540 --> 00:20:12.440
+Stephanie Rossini-Bryson: a Xy stage. And so these are all so 1 one would be left and right, and then the other would be into and out of the page.
+
+150
+00:20:13.040 --> 00:20:14.810
+Stephanie Rossini-Bryson: and then right behind it.
+
+151
+00:20:14.830 --> 00:20:28.570
+Stephanie Rossini-Bryson: which it's you know, there's a at the bottom. There's a little 90 degree bracket which mounts to the thing that's behind it, and that's just another translation stage, but it acts as a Z stage. So it moves up and down.
+
+152
+00:20:29.420 --> 00:20:31.440
+Stephanie Rossini-Bryson: So it's just a
+
+153
+00:20:31.840 --> 00:20:45.140
+Stephanie Rossini-Bryson: and and so the things that have their own controllers at the rotation stage, the XY stage and the translation stage at the back that they're ones that we need controllers for separately. But the 2 going orbiters have their own controllers
+
+154
+00:20:46.020 --> 00:20:48.119
+Julien Lozi: on on this figure, like the
+
+155
+00:20:48.190 --> 00:20:58.690
+Julien Lozi: the the chip is not attached to the no, so I have to. I guess II have to create little
+
+156
+00:20:58.780 --> 00:21:03.180
+Stephanie Rossini-Bryson: Brackets that will attach the goniometer to the chip, mounts
+
+157
+00:21:03.460 --> 00:21:06.060
+Stephanie Rossini-Bryson: to the the little rectangular box up here.
+
+158
+00:21:06.100 --> 00:21:11.059
+Stephanie Rossini-Bryson: So that's the next step is just building these and solidworks and getting them made
+
+159
+00:21:11.220 --> 00:21:12.410
+Stephanie Rossini-Bryson: in lab.
+
+160
+00:21:13.280 --> 00:21:16.800
+Julien Lozi: and is the golden middle gonna be fine with the
+
+161
+00:21:17.620 --> 00:21:22.009
+Julien Lozi: the counterle of the chip like? It's very
+
+162
+00:21:22.240 --> 00:21:23.490
+Julien Lozi: December.
+
+163
+00:21:23.760 --> 00:21:39.419
+Stephanie Rossini-Bryson: Yes, so I have asked Newport about that, and like what moment it can hold. So the journey orders can only hold about 2 to 3 Newtons. But it's more so the the moment on it that we're concerned about, because if it
+
+164
+00:21:39.500 --> 00:21:52.530
+Stephanie Rossini-Bryson: if it can't handle that kind of moment, then we'd put account to wait on it. So we just need to make sure that the bracket itself is light enough. Otherwise one we could take away agony ominous. That's responsible for role, because that's
+
+165
+00:21:52.540 --> 00:22:03.790
+Stephanie Rossini-Bryson: of all the 5, the 6 axes that's the one that is least important. So if we were worried about for example, the bottom goniometer, because it can only hold 2 to 3 Newton's. If we're worried about
+
+166
+00:22:03.910 --> 00:22:11.459
+Stephanie Rossini-Bryson: whether that's going to move, you could take away the top one which would be responsible for role. So then it can hold a little bit more.
+
+167
+00:22:12.490 --> 00:22:22.659
+Barnaby Norris: To add what Steph said. There! All of the other stages got very accurate angular compliance, like moment compliance, calculations
+
+168
+00:22:22.660 --> 00:22:49.139
+Barnaby Norris: that Stephan Eckhard have done. And so they're all in this, based on the static load. They're all less than about 5 micro Radians. Which is, you know, an order of magnitude better than we need. Yeah, as Steph said, the Conex ones she hasn't gotten like Newport haven't given a good answer. However, the moment on it is is 10 to the minus 2 Newton meters. So if if it's not counterweight, because the chip is only 78 gram, the chip, and all. That is only 78 grams. So
+
+169
+00:22:49.180 --> 00:22:53.749
+Barnaby Norris: it's worst case scenario, as Steph said. You just need to have a 78 gram
+
+170
+00:22:53.950 --> 00:22:58.260
+Barnaby Norris: piece of metal on the other side, which is fine. You'd just be integrated into the bracket.
+
+171
+00:23:00.440 --> 00:23:05.699
+Julien Lozi: Okay? So why do you need to motorize these rotations.
+
+172
+00:23:07.630 --> 00:23:21.409
+Barnaby Norris: So that big challenge is you've got you need the front of the chip to be exactly playing to the the incoming wave. To
+
+173
+00:23:21.430 --> 00:23:43.989
+Barnaby Norris: what do we work out? I mean, it's gotta. It's gotta be about 1 one hundredth of a wave times the distance of like, what was the separation Mark lens, or a the 120 microns. So it worked out to be that whatever it was, the angular tolerance is really really fine. So in what we had previously, you might remember, there's this little thumb screws.
+
+174
+00:23:43.990 --> 00:24:03.650
+Barnaby Norris: And basically they're impossible. Because the first problem is, you can't motorize them so you can't actually scan it. Which is the most important thing. Secondly, the center of rotation isn't actually the center of the micro lens array so, in fact, they mostly do translation, so I don't know if you remember. In. So, for example, Mark Antoine's paper.
+
+175
+00:24:03.840 --> 00:24:06.490
+Barnaby Norris: you probably don't remember, but it had the
+
+176
+00:24:06.520 --> 00:24:18.120
+Barnaby Norris: the re. You couldn't get to the white light fringe in a lot of places, or you could only get to one at a time. So basically, you need to get it within good enough that then the mems segment piston amount.
+
+177
+00:24:18.200 --> 00:24:21.620
+Barnaby Norris: Can take up the slack without using up all its stroke.
+
+178
+00:24:22.360 --> 00:24:32.499
+Barnaby Norris: And so basically, what we're gonna do is have a sort of optimization routine. Left, right up down. Isn't that critical? That's only gonna be good to like a couple of microns.
+
+179
+00:24:32.500 --> 00:24:56.639
+Barnaby Norris: And then the the the role isn't that critical cause? That's just getting the sub apertures in the right place. That's only gotta be good to come out of what that'll like. Avoid a a degree or something. It's it wasn't very fine at all. And then the really fine stuff is the pitch and yaw because that is what basically, that's the first order fringe tracker. It's it's setting the
+
+180
+00:24:56.880 --> 00:25:18.080
+Barnaby Norris: the the wavefront flap. So I imagine the way it'll work is when we do the alignment. Probably the translation and everything will be pro set. Once, you know, we optimize that once, and then the things that are done actively. When we wanna do, an optimization is flatten. The mems, do the your pitch
+
+181
+00:25:18.140 --> 00:25:21.250
+Barnaby Norris: scan. Then do the mem, scan.
+
+182
+00:25:26.870 --> 00:25:40.420
+Barnaby Norris: Also those things that look like they prude off the right. They're flexible cables. It's just the way the had models are. So what this means is there'll be nothing sticking out like there is right now. So all of that weird stuff sticking out on the right, which has to be that will all be gone.
+
+183
+00:25:45.160 --> 00:25:45.970
+Julien Lozi: Okay.
+
+184
+00:25:47.460 --> 00:25:49.470
+Julien Lozi: for the schedule.
+
+185
+00:25:50.140 --> 00:25:54.609
+Julien Lozi: So you mention in the first slide, or one of the slides
+
+186
+00:25:56.000 --> 00:26:00.150
+Julien Lozi: that you guys were planning to arrive
+
+187
+00:26:00.780 --> 00:26:02.780
+Julien Lozi: around the 6. So can.
+
+188
+00:26:05.210 --> 00:26:06.520
+Barnaby Norris: That's nominal.
+
+189
+00:26:06.760 --> 00:26:07.540
+Eckhart Spalding: Yeah.
+
+190
+00:26:09.250 --> 00:26:11.580
+Julien Lozi: Well, nominally like the
+
+191
+00:26:12.600 --> 00:26:16.860
+Julien Lozi: we stop observing on the 20 ninth of September
+
+192
+00:26:18.140 --> 00:26:19.619
+Julien Lozi: place that we can
+
+193
+00:26:20.210 --> 00:26:22.470
+Julien Lozi: 30 and October first.
+
+194
+00:26:23.350 --> 00:26:28.590
+Julien Lozi: like the prime is okay. If you arrive on October sixth, this is a Friday.
+
+195
+00:26:28.880 --> 00:26:36.750
+Julien Lozi: So you're not gonna going to a summit until the Monday, October 9, which gives you only
+
+196
+00:26:38.430 --> 00:26:42.070
+Julien Lozi: technically like one week pretty much
+
+197
+00:26:42.120 --> 00:26:45.609
+Julien Lozi: before you have to bring it back up to the summit.
+
+198
+00:26:47.120 --> 00:26:55.619
+Barnaby Norris: That's a good point, Friday, so coming earlier would actually make sense. And so maybe that means that Steph just comes a bit later or something.
+
+199
+00:26:56.780 --> 00:27:01.320
+Julien Lozi: Are you waiting for stuff to arrive. What was the the
+
+200
+00:27:01.730 --> 00:27:10.610
+Julien Lozi: Stephen? Stephen?
+
+201
+00:27:10.830 --> 00:27:12.559
+Julien Lozi: Yeah, it's not important.
+
+202
+00:27:13.120 --> 00:27:19.009
+Vincent Deo: But yeah. But as Joao was saying, you can't really come earlier, because we're observing.
+
+203
+00:27:19.860 --> 00:27:22.779
+Julien Lozi: No, no, we we we finish observing
+
+204
+00:27:23.050 --> 00:27:25.899
+Vincent Deo: the 20 ninth of September. So
+
+205
+00:27:26.630 --> 00:27:33.200
+Julien Lozi: like we can start submit work on the October second. Are we training? When are we training?
+
+206
+00:27:33.850 --> 00:27:34.870
+Julien Lozi: 18?
+
+207
+00:27:35.330 --> 00:27:38.749
+Vincent Deo: And we're not craning at the end of the run on the 20 on the thirtieth?
+
+208
+00:27:39.860 --> 00:27:47.430
+Julien Lozi: No, we're training. On the 27, the night of the 29 is the L. The Lgs ilcs. 9.
+
+209
+00:27:47.520 --> 00:27:51.110
+Vincent Deo: So the earliest day we can pop glint is the 27 s.
+
+210
+00:27:52.620 --> 00:27:54.380
+Julien Lozi: Yeah. But no.
+
+211
+00:27:54.680 --> 00:28:01.099
+Vincent Deo: oh, just saying, just just, you know, lining up, just lining up the constraints
+
+212
+00:28:01.690 --> 00:28:09.930
+Julien Lozi: will start on October second at the late, the earliest.
+
+213
+00:28:10.490 --> 00:28:12.039
+Barnaby Norris: Wait you on a weekend.
+
+214
+00:28:13.360 --> 00:28:14.170
+Barnaby Norris: Yes.
+
+215
+00:28:14.710 --> 00:28:21.109
+Barnaby Norris: So that's a good point coming early would basically give them a whole extra week. That's actually a really good point.
+
+216
+00:28:22.430 --> 00:28:29.079
+Julien Lozi: Yes, yeah. I mean, you know, even if you don't have everything like you probably have enough stuff to
+
+217
+00:28:29.670 --> 00:28:36.719
+Barnaby Norris: to start the work. Yup. So then maybe the best thing is that if me and Eckart come, and then Steph comes after her graduation.
+
+218
+00:28:39.690 --> 00:28:43.420
+Julien Lozi: Yeah, I mean, what's more important, graduating or or Clint?
+
+219
+00:28:44.770 --> 00:28:46.009
+Barnaby Norris: Yes, Def.
+
+220
+00:28:46.800 --> 00:28:56.079
+Stephanie Rossini-Bryson: you guys could do a ceremony. I'm sure you gotta.
+
+221
+00:28:56.140 --> 00:28:59.020
+Peter Tuthill: I don't know. You got a gown over there
+
+222
+00:28:59.150 --> 00:29:13.279
+Barnaby Norris: really cool. I saw we don't have defenses in Australia for Phd. I think we're going to, but also I've been to couple in Hawaii and like, for example, Shawn Goebel's one, and it's really cool cause afterwards, when they give you, doctor, like you get overlays, which is really cool.
+
+223
+00:29:13.970 --> 00:29:14.650
+Julien Lozi: Yep.
+
+224
+00:29:14.890 --> 00:29:21.349
+Eckhart Spalding: hmm! So if if I understand this right, if Summit work were to start on October second
+
+225
+00:29:21.550 --> 00:29:26.270
+Eckhart Spalding: would would craning be October second or third? Is that right?
+
+226
+00:29:27.450 --> 00:29:35.600
+Julien Lozi: I'm I'm just saying, like we can remove glean from Scaxale the week of October second
+
+227
+00:29:36.220 --> 00:29:42.050
+Julien Lozi: can be any time that week. But if you guys arrive on Friday, then we can't work until the next Monday.
+
+228
+00:29:43.000 --> 00:29:43.900
+Julien Lozi: So
+
+229
+00:29:44.170 --> 00:29:48.229
+Julien Lozi: yeah, you don't have to to show up on the first or the second like
+
+230
+00:29:48.500 --> 00:29:58.360
+Julien Lozi: depends how much time you need really like. This is. I can't really tell you how much time you need, but if you arrive on the sixth, then you can list on the ninth.
+
+231
+00:29:58.440 --> 00:30:11.050
+Julien Lozi: bring it down and start walking the lab on the tent. you know. So that that already limiting you. Yup. So yeah, that's that's just yeah.
+
+232
+00:30:11.770 --> 00:30:17.089
+Barnaby Norris: It's a very good point. Yeah, it's probably better to have people show up early and
+
+233
+00:30:17.390 --> 00:30:19.460
+Julien Lozi: starts removing stuff
+
+234
+00:30:19.750 --> 00:30:22.690
+Barnaby Norris: the other issue is lab space.
+
+235
+00:30:23.360 --> 00:30:25.890
+Julien Lozi: we don't have lap space at the moment.
+
+236
+00:30:27.690 --> 00:30:34.200
+Julien Lozi:  the in the SIM lab. We have the the hard booth and the soft booth.
+
+237
+00:30:34.280 --> 00:30:36.780
+Julien Lozi: The hard booth is used
+
+238
+00:30:38.410 --> 00:30:42.010
+Julien Lozi: by our different projects, and this
+
+239
+00:30:42.060 --> 00:30:55.390
+Julien Lozi: already not enough space. and the soft booth is used by the L. Tio project so. But we could put you in the old
+
+240
+00:30:56.030 --> 00:31:00.860
+Julien Lozi: A. Waini lab. I think, if we clean up a bit of that table
+
+241
+00:31:01.270 --> 00:31:04.749
+Julien Lozi: like your bench is not huge. So that should be okay.
+
+242
+00:31:05.040 --> 00:31:10.620
+Barnaby Norris: Is that is that the like electronics? You want to the right of the entry way. Yeah, cool.
+
+243
+00:31:11.210 --> 00:31:14.890
+Eckhart Spalding: Okay, that's good. The old a 1. 88 lab.
+
+244
+00:31:15.680 --> 00:31:26.749
+Julien Lozi: Yeah. So there's a there's a another har booth with an old zygo in there that they used for characterizing the the Iwiti. DM,
+
+245
+00:31:27.220 --> 00:31:33.539
+Julien Lozi: the only annoying thing about this one is the the table is imperial and not metric.
+
+246
+00:31:34.520 --> 00:31:40.659
+Barnaby Norris: Yeah, like you only have. You have a bread bowl. So it's probably fine.
+
+247
+00:31:41.610 --> 00:31:42.420
+Julien Lozi: Oh.
+
+248
+00:31:43.790 --> 00:31:48.569
+Julien Lozi: yeah, we just need to ask them if it's fine and and can make some space, but
+
+249
+00:31:49.140 --> 00:31:52.120
+Barnaby Norris: should be awesome. That's that's great.
+
+250
+00:31:52.330 --> 00:31:53.160
+Eckhart Spalding: Okay?
+
+251
+00:31:53.690 --> 00:32:02.999
+Barnaby Norris: One thing I want to ask about is we can. Otherwise we can probably get something you don't have a broadband source
+
+252
+00:32:03.650 --> 00:32:08.529
+Barnaby Norris: available, do you? I'm imagining you've got a super K, but cones using that one. I think
+
+253
+00:32:09.200 --> 00:32:10.960
+Barnaby Norris: the is that right?
+
+254
+00:32:11.390 --> 00:32:12.810
+Julien Lozi: So we have
+
+255
+00:32:12.880 --> 00:32:17.550
+Julien Lozi: the new super K that we're using in the SIM lab right now
+
+256
+00:32:17.900 --> 00:32:18.969
+Julien Lozi: in here.
+
+257
+00:32:20.680 --> 00:32:24.479
+Barnaby Norris: Is it something we could borrow as that currently being used in an experiment.
+
+258
+00:32:26.290 --> 00:32:31.230
+Julien Lozi:  I mean, it's used by by hyun. But
+
+259
+00:32:31.760 --> 00:32:34.690
+Julien Lozi: hopefully, Johan's stuff is gonna be at the summit.
+
+260
+00:32:35.320 --> 00:32:37.990
+Julien Lozi: although it seems unlikely now. But
+
+261
+00:32:38.410 --> 00:32:47.620
+Kyohoon Ahn: oh, yeah, I think October should be fine.
+
+262
+00:32:47.830 --> 00:32:49.090
+Barnaby Norris: Okay, cool.
+
+263
+00:32:49.110 --> 00:32:52.869
+Kyohoon Ahn: It's hard to tell. It's in review process.
+
+264
+00:32:53.250 --> 00:32:54.770
+Kyohoon Ahn: Hello, Hello!
+
+265
+00:32:55.710 --> 00:33:00.680
+Kyohoon Ahn: Sorry now. I cannot tell yet. But yeah, you can borrow. We can share the line.
+
+266
+00:33:00.740 --> 00:33:03.079
+Barnaby Norris: But the problem is, there's faith.
+
+267
+00:33:03.780 --> 00:33:05.229
+Space is not enough.
+
+268
+00:33:06.020 --> 00:33:13.239
+Julien Lozi: Oh, like we would have to move the source given. So oh, I see, this is the kind of sharing where you don't
+
+269
+00:33:13.260 --> 00:33:16.190
+Julien Lozi: really share. You give them the source for a bit.
+
+270
+00:33:17.720 --> 00:33:19.799
+Kyohoon Ahn: Okay, it is what it is.
+
+271
+00:33:20.100 --> 00:33:27.920
+Julien Lozi: I mean, technically, you know, it's a week like, you guys probably just need to stop with a red laser for for a while. And then
+
+272
+00:33:28.030 --> 00:33:31.140
+Julien Lozi: that's right. Only used a super. Caddian.
+
+273
+00:33:33.160 --> 00:33:35.600
+Kyohoon Ahn: Yeah, then I should be fine.
+
+274
+00:33:37.390 --> 00:33:46.690
+Barnaby Norris: That would be great. Kun is in the soft booth. I'm trying to remember, because where you've got the nonlinear curvature, wavefront sensor set up. Is there any space in that table?
+
+275
+00:33:47.220 --> 00:33:49.459
+Barnaby Norris: I know you've moved that upstairs, haven't you?
+
+276
+00:33:49.610 --> 00:33:55.460
+Kyohoon Ahn: No, it's I mean, yeah. It's in not the soft booze, so
+
+277
+00:33:55.920 --> 00:34:00.410
+Kyohoon Ahn: is being used by the Lto
+
+278
+00:34:00.810 --> 00:34:12.110
+Kyohoon Ahn: test. So they are like huge. There is very huge system in the software, so there is no space in crowded as well.
+
+279
+00:34:12.250 --> 00:34:14.670
+Barnaby Norris: Yeah, okay, yes, right?
+
+280
+00:34:15.510 --> 00:34:21.350
+Kyohoon Ahn: I mean, you guys can have the space below my setup because my setup is kind of second floor.
+
+281
+00:34:21.530 --> 00:34:23.829
+Kyohoon Ahn: But I'm I'm not sure how
+
+282
+00:34:23.960 --> 00:34:26.019
+Kyohoon Ahn: big year set up. Ease
+
+283
+00:34:26.270 --> 00:34:33.479
+Barnaby Norris: it. It sounds like it might be easier if we can use the A. 188 bench. That sounds like it'd be less in people's way and things
+
+284
+00:34:37.250 --> 00:34:41.950
+Vincent Deo: the solution, Julia, but that's hypothetical. Is that we
+
+285
+00:34:42.010 --> 00:34:47.599
+Vincent Deo: stash. Does I go away to liberate some room, but I don't know how much of a pain that is
+
+286
+00:34:49.560 --> 00:34:50.489
+Julien Lozi: big one.
+
+287
+00:34:50.699 --> 00:34:51.460
+Vincent Deo: Yeah.
+
+288
+00:34:51.630 --> 00:34:57.690
+Julien Lozi: it'd be easier to just clean the. But you know, it's just that
+
+289
+00:34:58.120 --> 00:35:05.460
+Vincent Deo: that gives room in the hard boost. So that doesn't hinder Kyoon engine and blue for a week or 2.
+
+290
+00:35:10.530 --> 00:35:11.330
+Eckhart Spalding: But
+
+291
+00:35:11.940 --> 00:35:34.140
+Barnaby Norris: and the former. So
+
+292
+00:35:34.630 --> 00:35:37.529
+Julien Lozi: there are only 6 people in there. It's insane.
+
+293
+00:35:38.290 --> 00:35:43.140
+Barnaby Norris: Now that that sounds good is definitely the better way to go
+
+294
+00:35:43.290 --> 00:35:44.180
+Barnaby Norris: awesome.
+
+295
+00:35:45.310 --> 00:35:50.420
+Eckhart Spalding: Okay? Also, what do hard booth and soft booth mean in this context.
+
+296
+00:35:51.090 --> 00:35:56.309
+Julien Lozi: abuses just hard walls and soft booses like the plastic key
+
+297
+00:35:57.070 --> 00:36:01.680
+Julien Lozi: panels that so they're not really clean like.
+
+298
+00:36:02.020 --> 00:36:05.040
+Julien Lozi: Don't expect a clean room level, but
+
+299
+00:36:05.880 --> 00:36:10.100
+Julien Lozi:  The harbus would be a little cleaner than the south booths.
+
+300
+00:36:11.640 --> 00:36:20.250
+Julien Lozi: But yeah, we have ventilation and stuff like that. But we can tell now if you care about cleanliness. But I mean, this is just green cell
+
+301
+00:36:23.040 --> 00:36:28.109
+Julien Lozi: like it's gonna end up at the summit with which is not clean. So
+
+302
+00:36:30.070 --> 00:36:35.830
+Barnaby Norris: so I wanted to ask Vince and Olivier mostly about computer things. So
+
+303
+00:36:36.380 --> 00:36:54.580
+Barnaby Norris: it sounds like, briefly mentioned it to Olivia yesterday. The easiest thing for now is probably cause we've got that little small form factor PC, that we use right now and nuke that and put Linux on it? And because all we, what we need to run on that is moving the stages.
+
+304
+00:36:54.600 --> 00:37:00.739
+Barnaby Norris: And then also the most important thing is the DMO cune the the DM. That
+
+305
+00:37:00.780 --> 00:37:08.589
+Barnaby Norris: the the Boston micro machines, one that goes into Glynn. Do I know you're using it? Do you recall if it's Pcie or USB.
+
+306
+00:37:09.540 --> 00:37:10.640
+Kyohoon Ahn: Oh, yes.
+
+307
+00:37:10.680 --> 00:37:16.170
+Barnaby Norris: cool. Okay, great. Yeah. It's the fast driver. Great. Okay? So so
+
+308
+00:37:16.360 --> 00:37:19.580
+Vincent Deo: I can keep accommodating your cigarette, too.
+
+309
+00:37:19.620 --> 00:37:27.920
+Barnaby Norris: And I can accommodate your men. So we're not gonna need to use the C red 2, because we'll use well, at least, the the main thing is using up upon a
+
+310
+00:37:29.270 --> 00:37:35.550
+Vincent Deo: okay, that's so that that makes things easier. I think we what happens to your spectrograph, then?
+
+311
+00:37:35.560 --> 00:38:03.500
+Barnaby Norris: So the idea is, yeah, I mean, one option is that, you know we we actually bring it back to Sydney to use for lab tests. It's from a previous conversation with Ollie. It sounds like it's good to keep there as a backup, especially because, you know, sometimes the C red one might be on and if we wanna do daytime tests or something. Then we've got the option of also for the phoneic lantern work. We have the option of, you know, swapping things around. So I think, for now we leave it there, but it won't be in
+
+312
+00:38:03.580 --> 00:38:04.790
+Barnaby Norris: primary use.
+
+313
+00:38:06.720 --> 00:38:11.880
+Barnaby Norris: How do you connect to Upperpani? That was the next thing I had to ask you about so
+
+314
+00:38:12.120 --> 00:38:21.669
+Barnaby Norris: before. Just briefly, before we move on to that so, Vince, do you reckon you could actually accommodate the DM in one of the machines?
+
+315
+00:38:21.870 --> 00:38:25.890
+Vincent Deo: Yeah, that's that's that's not a problem. So in that case, I think
+
+316
+00:38:26.380 --> 00:38:47.739
+Barnaby Norris: I mean the reason I mean to start off with, we'd probably, you know, for setting up in the lab in Hilo would use our own little box. But we really want to be able to do exactly what you're saying, because the idea is at some stage. We, you know, we have the active fringe tracking, right? So we need to do like real time loop from up upon a feeding back to the DM. Somehow. So you know, if that card is in one of the schesia machines, that's obviously
+
+317
+00:38:48.040 --> 00:38:49.590
+Barnaby Norris: much much easier.
+
+318
+00:38:51.040 --> 00:38:58.409
+Vincent Deo: Yeah, not a problem at all. Excellent. Excellent. So yeah, so, Julian, the
+
+319
+00:38:58.690 --> 00:39:19.170
+Barnaby Norris: what you know, there's the I know we origin like there's that sort of design for the the later chip, the the Higher Wave Guide, Count Chip, and you know we you got that nice quote with the stacked V group thing, this chip here. This doesn't have so many output, so we can just use a regular V groove. So what I wanted to ask is, you know, up upon a so there's those little, you know.
+
+320
+00:39:20.060 --> 00:39:31.990
+Barnaby Norris: places that you can put a V groove down from a metal block so we can make those little rectangle so we can make the right sort of connector that goes in those. So I guess we just need know the
+
+321
+00:39:32.460 --> 00:39:33.800
+Barnaby Norris: dimensions. There.
+
+322
+00:39:34.530 --> 00:39:36.980
+Julien Lozi: You already have a V groove.
+
+323
+00:39:37.250 --> 00:39:42.139
+Barnaby Norris: Simon does. Yeah. Oh, we don't need, I mean, unless you've got another preference.
+
+324
+00:39:43.040 --> 00:39:46.410
+Julien Lozi: No, I'm I'm running out of space for the the
+
+325
+00:39:46.680 --> 00:39:55.159
+Barnaby Norris: the round slots. So, using a rectangular slot would be better if you can. Rectangular slots suits us better as well. So that's good.
+
+326
+00:39:55.470 --> 00:39:58.439
+Julien Lozi: Okay? So yeah, I'll send you
+
+327
+00:39:59.050 --> 00:40:03.450
+Barnaby Norris: the dimensions, I guess. Excellent. And then, yeah, the
+
+328
+00:40:04.060 --> 00:40:04.830
+Julien Lozi: okay.
+
+329
+00:40:08.440 --> 00:40:11.729
+Julien Lozi: So what do you? What do you you don't have right now.
+
+330
+00:40:13.230 --> 00:40:14.689
+Julien Lozi: in all of this
+
+331
+00:40:15.950 --> 00:40:28.000
+Barnaby Norris: most of these parts we were. Gonna they're all in stock ones and get them sent directly to halo. So once, you know, once we've got a sort of a plan, and you know, if everyone's okay in stuff, we just press the buttons and get them sent.
+
+332
+00:40:29.130 --> 00:40:34.100
+Eckhart Spalding: Yeah, they're they're some of the off the shelf optics and the current clin. We're just going to reuse.
+
+333
+00:40:37.730 --> 00:40:41.570
+Julien Lozi: Yeah. But so what's not ordered yet.
+
+334
+00:40:43.090 --> 00:40:48.740
+Barnaby Norris: It's ordered because we want to have it shipped to you, and you wanted to talk to you before we started
+
+335
+00:40:49.200 --> 00:40:50.260
+Barnaby Norris: doing that.
+
+336
+00:40:50.660 --> 00:40:57.180
+Vincent Deo: Yes, since we're on the stages I didn't comment earlier, but in terms of Linux control.
+
+337
+00:40:57.480 --> 00:41:00.099
+Vincent Deo: I want to say, challenge accepted.
+
+338
+00:41:00.720 --> 00:41:05.310
+Vincent Deo: And Julian, do we have all the USB hub space we need?
+
+339
+00:41:05.720 --> 00:41:12.359
+Vincent Deo: Or you guys are gonna provide more hubs. Can you guys get hubs. I got a hub guy
+
+340
+00:41:12.560 --> 00:41:17.000
+Vincent Deo: top top grade. Can you guys provision a raspberry pi and be standalone?
+
+341
+00:41:17.320 --> 00:41:19.659
+Barnaby Norris: What do you want to, Russell? But why? Oh.
+
+342
+00:41:20.240 --> 00:41:24.660
+Julien Lozi: why, like the the muddles? Why, why can't we just
+
+343
+00:41:24.860 --> 00:41:32.990
+Vincent Deo: have a glint computer controlling those models? That's Yup, the nuke, or yeah, or raspberry? That's exactly what I meant.
+
+344
+00:41:33.230 --> 00:41:37.550
+Barnaby Norris: Oh, but you have. You have a PC, you have a full PC, just for you.
+
+345
+00:41:37.610 --> 00:41:50.620
+Barnaby Norris: Yeah, we thought like it. It's like a little small form factor thing that we need to find a place to. I was I was skipping on that because since we're gonna have your camera on your DM, you don't need a PC, so
+
+346
+00:41:50.860 --> 00:42:16.529
+Barnaby Norris: we, I think we definitely want to at some stage. Yeah. And and if I mean, if we can use the machines. And yeah, we can certainly get a raspberry pi or something that's obviously a lot easier and integrated. And the software stack is much easier. And we don't have to like say, Hey, we share files of Smb, whatever the hell we had to do before.
+
+347
+00:42:16.670 --> 00:42:22.739
+Olivier Guyon: so do you? I guess the question is, do you have software alignment software that needs simultaneously
+
+348
+00:42:22.900 --> 00:42:29.230
+Olivier Guyon: to talk to stages and have a fairly low latency access to the DM.
+
+349
+00:42:29.280 --> 00:42:34.089
+Olivier Guyon: And the camera? Because if you have your own computer that talks to stages. But the camera
+
+350
+00:42:34.230 --> 00:42:53.469
+Barnaby Norris: and the DM are on our computers. How do you know? Then we need to plan a little bit ahead. Yeah, I know that that would be suboptimal, like, yes. So we do need that. So we'd have to set some sort of network connection to send commands. It always be a lot easier if we can. Just, you know, if they're locally connected. So we can just write straight to the serial ports.
+
+351
+00:42:54.680 --> 00:43:00.139
+Olivier Guyon: So so your plan is is, you guys
+
+352
+00:43:00.760 --> 00:43:08.230
+Barnaby Norris: like, you guys don't need kilohertz control of the model site. You're fine.
+
+353
+00:43:08.290 --> 00:43:21.450
+Barnaby Norris: Yeah. It's it's more of a, I guess, just in terms of simplicity for software stack and things. If all the other computer is doing is plugging into like a few controllers, a few stage controllers. It's probably easier.
+
+354
+00:43:21.660 --> 00:43:33.109
+Barnaby Norris: especially from a software point of view, rather than having a network connection to a computer that all it does is send commands. If it's possible just to plug those usbs into the same computer that's running the software that does. DM, and what not.
+
+355
+00:43:33.220 --> 00:43:45.299
+Vincent Deo: Yeah, that's that's what. Yes. Sorry I had disconnected that. You had a full computer for you guys. And that's fine so you're saying mini atx. But that's gonna go on the frame, right?
+
+356
+00:43:45.370 --> 00:43:51.550
+Barnaby Norris: It have yeah, somewhere on the frame. It's another thing, the other reason using
+
+357
+00:43:52.260 --> 00:43:54.550
+Eckhart Spalding: well, which is
+
+358
+00:43:54.760 --> 00:43:58.010
+Vincent Deo: sorry. The Skixio support frame like the the
+
+359
+00:43:58.560 --> 00:43:59.720
+Vincent Deo: bench frame.
+
+360
+00:44:00.510 --> 00:44:03.369
+Vincent Deo: This is this is crowded.
+
+361
+00:44:03.690 --> 00:44:08.529
+Julien Lozi: I mean, I would prefer like, if you can get a a small nuke, or
+
+362
+00:44:09.180 --> 00:44:14.649
+Julien Lozi: something else like even smaller than
+
+363
+00:44:16.080 --> 00:44:21.930
+Barnaby Norris: yeah. If we don't need to have the Pcie card, then obviously we don't need a the small form factor.
+
+364
+00:44:22.150 --> 00:44:24.390
+Barnaby Norris: if if but it may be worth
+
+365
+00:44:24.780 --> 00:44:35.300
+Barnaby Norris: the proper way. If Vince, if it sounds like Vince, is cool with this, if we don't actually have a separate computer, because all the computer would be doing is sending commands to stages, and if we do need another supply
+
+366
+00:44:35.640 --> 00:44:41.289
+Julien Lozi: there is no space. There is no USB port available. We already have, like a hundred USB ports
+
+367
+00:44:41.340 --> 00:44:45.219
+Julien Lozi: taken, maybe not a hundred. But we're getting close to that. So.
+
+368
+00:44:45.500 --> 00:44:48.289
+Vincent Deo: so that's the thing. It's mostly about USB, space.
+
+369
+00:44:48.510 --> 00:44:59.299
+Vincent Deo:  so yeah, raspberry pi or something. Well, if if you can actually fit that on like one mini atx in a very small casing.
+
+370
+00:44:59.320 --> 00:45:03.160
+Vincent Deo: so a mini atx motherboard is 6 inches by 6 inches. Sure.
+
+371
+00:45:04.210 --> 00:45:05.170
+Vincent Deo: I mean.
+
+372
+00:45:06.240 --> 00:45:20.700
+Vincent Deo: we have it in a case with power supply and everything. But I'd much rather just buy a raspberry pi or something, because it's exactly so. If if you can accommodate that on yeah, like one respo thing
+
+373
+00:45:20.730 --> 00:45:27.490
+Barnaby Norris: plus power supply plus one USB. Hub, that that would save a lot of space for us, and and that would be great.
+
+374
+00:45:27.540 --> 00:45:37.209
+Barnaby Norris: Let's do that then. And so the we just need to make something which you maybe already have. Do you have a software stack that's like raspberry pi like an arm
+
+375
+00:45:37.580 --> 00:45:39.360
+Barnaby Norris: Mini version of the
+
+376
+00:45:39.620 --> 00:45:47.420
+Barnaby Norris: milk. What do you have any milk you just need. You just need your reports. That's it.
+
+377
+00:45:47.530 --> 00:45:57.400
+Barnaby Norris: Oh, but to send the commands over, you know you've got those team up sessions that share across the network? Can we set up a similar team based thing on a raspberry pi to do the USB,
+
+378
+00:45:57.570 --> 00:46:03.650
+Barnaby Norris: yeah, cool. You know, you can install Linux on your raspberry pi. What do you mean? It's only Linux.
+
+379
+00:46:03.780 --> 00:46:12.150
+Vincent Deo: isn't it? No, but like like ubuntu ubuntu on the raspberry, pi
+
+380
+00:46:12.520 --> 00:46:24.300
+Vincent Deo: the put put boot to our your pi, and it'll be fine and then there's there's plenty of network protocols or bare Ssh. Calls to to get to the mounts
+
+381
+00:46:24.820 --> 00:46:30.660
+from the exterior into your pie, and from your pie out to your DM, on 605.
+
+382
+00:46:31.390 --> 00:46:32.320
+Barnaby Norris: Now.
+
+383
+00:46:32.450 --> 00:46:36.320
+Vincent Deo: now, if you bring in, it's gonna be
+
+384
+00:46:36.650 --> 00:46:40.299
+Vincent Deo: literally mounts. Only like it's not gonna give you a workspace.
+
+385
+00:46:41.230 --> 00:46:47.920
+Vincent Deo: You can have another computer somewhere, not on the badge to have a little workspace of yours to do stuff.
+
+386
+00:46:47.960 --> 00:46:49.839
+Vincent Deo: but then can be on the frame.
+
+387
+00:46:50.300 --> 00:46:57.020
+Barnaby Norris: I think, what? What will be good? Actually. So I think what you we should definitely do that like longer term.
+
+388
+00:46:57.300 --> 00:47:21.779
+Barnaby Norris: because we want to work in the lab in halo. So we'll probably use our little computer for that. And we wanna have the Pcie card in there for the DM, I think the first iteration is actually, we should just use our own little computer, and we'll figure out how to put it somewhere. Because that way we can get everything working in the lab right in halo, because we'll have the DM. And stuff there. But if it's Linux and a bun to is probably pretty painless.
+
+389
+00:47:22.170 --> 00:47:27.380
+Barnaby Norris: Famous last words to move the serial port control bit onto a mini, a mini computer.
+
+390
+00:47:28.150 --> 00:47:31.120
+Vincent Deo: Yeah, that's so. That's basically
+
+391
+00:47:31.210 --> 00:47:36.969
+Vincent Deo: what what Julian did for the infrared permit. All the hardware of the infrared permit runs on the single pie with Ukuntu.
+
+392
+00:47:38.860 --> 00:47:46.569
+Barnaby Norris: So we'll start off with the DM. Not connected in Scaxo. We'll just put in our Mini, PC, so then we can cause wanna run it in helo
+
+393
+00:47:47.060 --> 00:47:54.680
+Barnaby Norris: and we can keep that at first and then get rid of the small form factor. Eventually.
+
+394
+00:47:54.860 --> 00:47:56.400
+Vincent Deo: Oh, yeah.
+
+395
+00:47:56.640 --> 00:48:25.180
+Barnaby Norris: yeah. If you can. If you can switch your PC to the absolute minimum size around the motherboard. Then we can probably fit that. You've asked the right person cause. I've just been spending a lot of time trying to get the ultimate small fact to small form factor gaming. PC, and I've got this one from Dan Labs, and it's so small that the so the Gpu basically pushes the motherboard with a little riser. And the whole thing is like this. So
+
+396
+00:48:25.740 --> 00:48:28.960
+Vincent Deo: oh, yeah, you know what you're looking for that. That's that's good.
+
+397
+00:48:29.770 --> 00:48:40.120
+Barnaby Norris: It'll look sick. So the trouble is, all this stuff has heaps of RGB. Cause it's all gaming aimed which isn't great for the the bench. So after, like. burn out the Leds.
+
+398
+00:48:42.870 --> 00:48:43.680
+Eckhart Spalding: yeah.
+
+399
+00:48:44.930 --> 00:48:48.330
+Eckhart Spalding: do do the Skexio folks have other questions for us?
+
+400
+00:48:48.730 --> 00:49:01.729
+Vincent Deo: Yeah, in the in that description we're making. Then that's assuming we get all your stages running on Linux, which should be doable. assuming we can't. What's the fallback? You keep the nuke. And that's it.
+
+401
+00:49:02.840 --> 00:49:06.850
+Barnaby Norris: Yeah, I've that's really interesting that Julian mentioned that
+
+402
+00:49:06.980 --> 00:49:08.480
+Barnaby Norris: the conics
+
+403
+00:49:08.580 --> 00:49:18.970
+Barnaby Norris: tip tilt mirror mounts. People have had issues getting them working on windows. I'd like to know more about what sorry getting working on Linux. I'd like to know more about what the actual problems were, do you?
+
+404
+00:49:19.250 --> 00:49:29.539
+Barnaby Norris: No, I have no idea, so don't know who who are the people who ran into the issue with that. Sorry, I know you said. The make team has one. But
+
+405
+00:49:29.990 --> 00:49:31.960
+Julien Lozi: we have, too. We could.
+
+406
+00:49:35.100 --> 00:49:42.880
+Julien Lozi: We could connect one to a Linux machine. And you guys can try to work it out remotely.
+
+407
+00:49:42.970 --> 00:49:44.890
+Barnaby Norris: That would be great.
+
+408
+00:49:45.100 --> 00:50:11.389
+Barnaby Norris: I think, when one issue we've had and we've had. This is the linear stages, is they don't show up at all. On Linux. And you might remember, Vince, me and Adam would grilling you about this and there's a whole bunch of random you dev stuff you needed to set up to actually make them show up as a serial port. It's not some of the connect stages to show up, because they're like an Ftdi standard thing, and some of them are something weird. Maybe that's the problem the Mac team ran into. In which case we know how to fix that.
+
+409
+00:50:13.200 --> 00:50:14.010
+Julien Lozi: Yeah.
+
+410
+00:50:14.550 --> 00:50:21.509
+Barnaby Norris: yeah, that'd be great if you can plug one in to a Linux computer and then we can have a play with it that that would be great.
+
+411
+00:50:22.140 --> 00:50:25.310
+Vincent Deo: So maybe maybe maybe Set could do that for us.
+
+412
+00:50:27.080 --> 00:50:30.879
+Julien Lozi: Alright. Now, huh! I heard my name.
+
+413
+00:50:31.390 --> 00:50:38.829
+Vincent Deo: Well, someday, yeah. Plug some of of
+
+414
+00:50:38.860 --> 00:50:40.759
+Julien Lozi: the retro P mount.
+
+415
+00:50:42.230 --> 00:50:45.960
+Julien Lozi: if you can plug it to A to CO. 2.
+
+416
+00:50:46.940 --> 00:50:48.890
+Sebastien Vievard: Usd, okay.
+
+417
+00:50:49.180 --> 00:50:51.629
+Julien Lozi: yes. Oh, any
+
+418
+00:50:51.700 --> 00:50:53.639
+Julien Lozi: Linux machine, actually.
+
+419
+00:50:54.140 --> 00:50:55.780
+Julien Lozi: Yes.
+
+420
+00:50:56.490 --> 00:51:00.009
+Julien Lozi: And then they can't try to figure it out remotely.
+
+421
+00:51:00.890 --> 00:51:03.039
+Sebastien Vievard: So interest is it.
+
+422
+00:51:03.170 --> 00:51:09.380
+Barnaby Norris: ish you want to put the order in. But it doesn't be today, like whenever you get a chance.
+
+423
+00:51:09.890 --> 00:51:13.740
+Sebastien Vievard: So you want an IP, okay, I just need to know
+
+424
+00:51:14.070 --> 00:51:22.129
+Julien Lozi: the reach. The retro IP mount. The reach is connected to connect driver nuke
+
+425
+00:51:23.050 --> 00:51:25.040
+Julien Lozi: connected to the nuke.
+
+426
+00:51:25.200 --> 00:51:26.570
+Sebastien Vievard: So this
+
+427
+00:51:26.630 --> 00:51:28.769
+Sebastien Vievard: the cable should be labeled.
+
+428
+00:51:29.270 --> 00:51:33.829
+Julien Lozi: yeah, he labeled. He's labeled.
+
+429
+00:51:34.040 --> 00:51:38.639
+Sebastien Vievard: Wow, yeah, I can do that.
+
+430
+00:51:38.720 --> 00:51:40.789
+Sebastien Vievard: Let me go check right now.
+
+431
+00:51:41.360 --> 00:52:05.139
+Barnaby Norris: Oh, good! I mean. So cause said, all we wanna do is we just wanna see if we can talk to. We don't actually need to, you know, use it to do stuff. We just wanna just interface. Yeah? And and if there's any choice, the Linux machine that would be least problematic if we needed to do like, you know, u dev service restart, whatever it is that that demon, the USB demon restart, because if at some point we need to do that to get it working. Obviously, that in
+
+432
+00:52:05.250 --> 00:52:15.339
+Barnaby Norris: for for a second resets all USB devices. So I wouldn't want to do thatio 2, because that would be really annoying. So I don't know if there's any machine that if we have to at some stage
+
+433
+00:52:15.720 --> 00:52:20.289
+Barnaby Norris: interrupt USB devices for a second, it doesn't cause.
+
+434
+00:52:20.520 --> 00:52:25.049
+Barnaby Norris: Yeah, perfect.
+
+435
+00:52:26.060 --> 00:52:27.950
+Julien Lozi: Now, do you have any objections?
+
+436
+00:52:28.150 --> 00:52:35.059
+Barnaby Norris: Nothing. Okay. Great. I'll make sure miles is doing a measurement when we do it.
+
+437
+00:52:35.220 --> 00:52:42.220
+Sebastien Vievard: Yeah, no, I ideally 605, or whatever
+
+438
+00:52:42.310 --> 00:52:48.629
+Vincent Deo: in in linear distance stick to who is closest. That's why.
+
+439
+00:52:48.920 --> 00:52:50.109
+Sebastien Vievard: Yeah, let's see.
+
+440
+00:52:50.170 --> 00:52:55.050
+Sebastien Vievard: Okay, well, you can keep talking, and I'll try to do it now.
+
+441
+00:52:55.470 --> 00:53:03.170
+Julien Lozi: Awesome. So the Gonyu manner uses uses the Conex ag. PP. Which is the same as the linear stage.
+
+442
+00:53:03.530 --> 00:53:05.920
+Julien Lozi: so it should be an issue.
+
+443
+00:53:06.550 --> 00:53:17.330
+Barnaby Norris: But the tip tilt mount uses the Conex, a. GAP. Which is different. I probably missed that. Those are different.
+
+444
+00:53:18.530 --> 00:53:20.979
+Julien Lozi: Yeah, that's why, you know.
+
+445
+00:53:21.760 --> 00:53:25.039
+Julien Lozi: like the I mean a long time ago
+
+446
+00:53:25.090 --> 00:53:32.689
+Julien Lozi: a name board a rotation mount for filter wheel. That's another connects. That's discontinued now. But
+
+447
+00:53:32.950 --> 00:53:39.270
+Julien Lozi: the the previous version of that the faster connects that we use for the differential wheel.
+
+448
+00:53:39.430 --> 00:53:41.929
+Julien Lozi: and Darwan was not even visible
+
+449
+00:53:41.950 --> 00:53:45.240
+Julien Lozi: in a Linux machine like nothing would show up.
+
+450
+00:53:45.460 --> 00:53:55.879
+Barnaby Norris: I wonder if that's the cause? We had that issue with. Adam bought some for home delay which had that issue, and we did eventually fix it. But it was really hard to make it visible in Linux.
+
+451
+00:53:56.090 --> 00:53:59.050
+Barnaby Norris: it might be issue.
+
+452
+00:54:00.000 --> 00:54:00.860
+Julien Lozi: I don't know.
+
+453
+00:54:01.100 --> 00:54:04.400
+Barnaby Norris: Yeah. Okay, well, that that's great if we can try it out.
+
+454
+00:54:04.550 --> 00:54:07.350
+Barnaby Norris: I see. So kind of see
+
+455
+00:54:07.430 --> 00:54:12.189
+Julien Lozi: which controller uses is used by the rotation.
+
+456
+00:54:12.540 --> 00:54:14.249
+Julien Lozi: He has a rotation mount. But
+
+457
+00:54:15.310 --> 00:54:24.969
+Olivier Guyon: device would not show up at the lowest level
+
+458
+00:54:25.320 --> 00:54:29.990
+Olivier Guyon: USB device. But if you put a hub in between, it would show up under Linux.
+
+459
+00:54:30.080 --> 00:54:31.210
+Barnaby Norris: Whoa?
+
+460
+00:54:32.000 --> 00:54:37.089
+Vincent Deo: Oh, yeah, that that happened to me recently, too. Some hub that would hide or show stuff.
+
+461
+00:54:39.070 --> 00:54:41.670
+Barnaby Norris: How weird's as an enumeration thing.
+
+462
+00:54:42.410 --> 00:54:47.410
+Vincent Deo: It's it's no, it's like, if it doesn't show up in Ls, USB, it's an electrical level problem.
+
+463
+00:54:48.160 --> 00:54:52.280
+Barnaby Norris: Oh, so you'd see something not in Ls, USB, and you wouldn't see anything d message.
+
+464
+00:54:52.800 --> 00:54:58.480
+Vincent Deo: That's yeah. I mean, that's that's crazy level stuff. That's it's it's the crazy layer.
+
+465
+00:54:58.530 --> 00:55:06.460
+Barnaby Norris: the crazy layer that that's that part of the stack of the the USB like transport layer. Crazy layer.
+
+466
+00:55:06.760 --> 00:55:18.510
+Olivier Guyon: Yeah, it's it's right below the. And it it happens more often with raspberry pi's. So we've had problems where the same device, same OS same kernel
+
+467
+00:55:18.690 --> 00:55:22.629
+Olivier Guyon: shows up in in an intel nug, but doesn't show up in a raspberry pi.
+
+468
+00:55:23.200 --> 00:55:28.490
+Olivier Guyon: Really, by putting a by putting a hub in between the raspberry pi and the device in touch, sure
+
+469
+00:55:29.000 --> 00:55:30.749
+Barnaby Norris: could be a power thing, maybe
+
+470
+00:55:31.890 --> 00:55:40.690
+Barnaby Norris: like it. The OS isn't allocating enough power. because the Colonel has to worry about that right. And these conex things use lots of power. And hmm.
+
+471
+00:55:41.050 --> 00:55:44.469
+Barnaby Norris: and the hub just goes like I got you fam and then gives whatever.
+
+472
+00:55:47.180 --> 00:55:50.319
+Barnaby Norris: Okay? Good stuff. Yeah. Oh, yeah. And and so
+
+473
+00:55:50.410 --> 00:55:56.829
+Barnaby Norris: for your hub, do get one with an external power supply. Now, we'll probably get one of those.
+
+474
+00:55:56.970 --> 00:56:02.910
+Barnaby Norris: I can't remember the brand. They're like the long black ones, and they got little switches and blue early Ds. D'you know the
+
+475
+00:56:05.120 --> 00:56:23.590
+Barnaby Norris: make sure I get one, that if it's power cycle you need to press the button to turn it back on, because some of the hubs have that which is the worst. Yeah. So either, they're like flip flop buttons. So you're sure there's day on a while back I got 3 replacements, and they're press buttons, but I make extra sure they do stay on. If you power cycle.
+
+476
+00:56:23.600 --> 00:56:25.509
+Vincent Deo: I can send you the bike.
+
+477
+00:56:25.810 --> 00:56:32.410
+Barnaby Norris: Yeah. Yeah. I've got one here that like 20 bucks. Nothing fancy at all.
+
+478
+00:56:32.640 --> 00:56:33.970
+Barnaby Norris: Think? Static?
+
+479
+00:56:34.320 --> 00:56:39.960
+Eckhart Spalding: II yeah, II think there's one such power supply in our office, Barnaby, on Chris's desk.
+
+480
+00:56:40.690 --> 00:56:52.040
+Barnaby Norris: Yeah, we we'll we'll make a shopping list of that sort of stuff, I mean. So just takes about to reiterate. I think I mean, this sounds really good, and I think we have to like you've pointed out. You know, it's an ambitious schedule, and
+
+481
+00:56:52.190 --> 00:57:02.910
+Barnaby Norris: the primary goal very much is, you know, if all goes well. This is a pretty, you know, straightforward, optical swap out right famous last words. It shouldn't be an issue. But if we don't.
+
+482
+00:57:02.910 --> 00:57:25.479
+Barnaby Norris: you know, if if we run into issues, it's really really important just to even at the first part done right to get onto Skex, I/O, so then we can remotely do things on the bench, or whatever because and this is like a nice time, because there is that, you know, it's it's one of the largest gaps where you're not doing observing and whatnot. So I don't think we need to panic about the schedule. I think you know it's
+
+483
+00:57:26.550 --> 00:57:29.440
+Barnaby Norris: we we we get
+
+484
+00:57:30.070 --> 00:57:33.159
+Julien Lozi: like you're assuming you are getting everything
+
+485
+00:57:34.330 --> 00:57:40.620
+Julien Lozi: before, like we had. We're already September twelfth. Like you.
+
+486
+00:57:40.740 --> 00:57:45.309
+Julien Lozi: I want you to put back the instrument in a man's basically.
+
+487
+00:57:45.420 --> 00:57:47.659
+Barnaby Norris: Yeah, take it down and put it back
+
+488
+00:57:48.090 --> 00:57:54.989
+Julien Lozi: in a month. You mean, in terms of getting stuff delivered. You're getting stuff delivered, even if they're in stock like
+
+489
+00:57:55.290 --> 00:57:57.839
+Julien Lozi: it can take a few weeks just to get
+
+490
+00:57:58.410 --> 00:58:04.510
+Barnaby Norris: mounts and stuff. So yeah. I mean, we've got we'd have to order them to their.
+
+491
+00:58:06.160 --> 00:58:17.049
+Barnaby Norris: Yes, Steph's been keeping a track of all the lead times, and talking to him about, or shipping dates and things like that. So it's not a completely unknown quantity. But yeah, no, totally. It's it's it's very tight.
+
+492
+00:58:17.440 --> 00:58:24.580
+Barnaby Norris: And we'll obviously check all this stuff and get proper dates and stuff before we make any firm, you know, commitments to
+
+493
+00:58:24.760 --> 00:58:25.580
+Barnaby Norris: travel.
+
+494
+00:58:27.210 --> 00:58:31.519
+Julien Lozi: but in any case, like Glint is going back on the instrument
+
+495
+00:58:31.980 --> 00:58:35.229
+Julien Lozi: before the 18. So even if you get not done.
+
+496
+00:58:35.750 --> 00:58:40.510
+Julien Lozi: So that's that's a requirement that we have to fix.
+
+497
+00:58:40.530 --> 00:58:47.609
+Barnaby Norris: Well, I mean, worst case scenario is, it doesn't go back, and it has to stay in the lab for months. Right? No, no, no, we don't.
+
+498
+00:58:47.840 --> 00:58:51.690
+Julien Lozi: We don't crane back with a module missing. That's
+
+499
+00:58:52.260 --> 00:58:59.009
+Julien Lozi: a a big like. It's it's you know, some weight on the side of the instrument. That's gonna change.
+
+500
+00:58:59.120 --> 00:59:03.150
+Julien Lozi: I don't want any change of weight for for science purposes. Like.
+
+501
+00:59:03.500 --> 00:59:05.590
+Barnaby Norris: right? Okay, so yeah.
+
+502
+00:59:05.740 --> 00:59:11.019
+Julien Lozi: like an imbalance that would create whatever an angle in the
+
+503
+00:59:11.350 --> 00:59:16.110
+Julien Lozi: in carries, or some some stupid thing like that.
+
+504
+00:59:16.360 --> 00:59:31.870
+Barnaby Norris: So even if you're not done, then, yeah, it's going back on the instrument. And you finish on the instrument at all. Yeah, yeah, okay, that's good to know. I mean, I think that's fine. I mean, the the thing that's going to take time, which we might run out of time on is all that you know, software and whatnot. And that's all.
+
+505
+00:59:32.150 --> 00:59:34.429
+Barnaby Norris: Yeah on the instrument, anyway.
+
+506
+00:59:37.850 --> 00:59:41.790
+Barnaby Norris: But that's yeah. That's that's good. So what I've I've I've written
+
+507
+00:59:41.850 --> 00:59:47.669
+Barnaby Norris: like this. So the crani is on the eighteenth. So it has to be a couple of days before that basically is the deadline
+
+508
+00:59:48.040 --> 00:59:53.200
+Barnaby Norris: I mean, the day before is fine. The day of is a little risky.
+
+509
+00:59:56.870 --> 01:00:12.610
+Barnaby Norris: So what what we'll do basic cause you know, this is what we want to find out is all this stuff that you've been telling us? We'll go back and have a chat at our end, and just sort of work out. Given all this information, you know what the best way is, and before we make any firm commitments, we'll we'll check back in with you. Obviously.
+
+510
+01:00:14.830 --> 01:00:15.600
+Eckhart Spalding: Okay.
+
+511
+01:00:16.160 --> 01:00:21.630
+Eckhart Spalding: do. The folks have to leave right now. I see it's past a little past the hour.
+
+512
+01:00:23.400 --> 01:00:25.610
+Julien Lozi: I can save it longer.
+
+513
+01:00:25.770 --> 01:00:28.090
+Eckhart Spalding: Okay, I was just gonna flip back to
+
+514
+01:00:29.090 --> 01:00:30.890
+Sebastien Vievard: By the way, it's in vampires.
+
+515
+01:00:31.470 --> 01:00:35.709
+Barnaby Norris: Alright. Cool empires, I see. Cool. Thank you, Saba.
+
+516
+01:00:35.830 --> 01:00:37.229
+Barnaby Norris: Excellent thanks.
+
+517
+01:00:41.870 --> 01:00:43.070
+Eckhart Spalding: Let's see.
+
+518
+01:00:43.160 --> 01:00:46.679
+Okay, I think we've answered
+
+519
+01:00:47.590 --> 01:00:53.190
+Julien Lozi: the point number 2. The connects mount.
+
+520
+01:00:53.200 --> 01:00:59.810
+Julien Lozi: in the Iow bench.  I think
+
+521
+01:01:00.170 --> 01:01:05.180
+Julien Lozi: if the if glint is of the instrument, then
+
+522
+01:01:05.840 --> 01:01:10.509
+Julien Lozi: it should be possible, with a too much interference, like
+
+523
+01:01:10.750 --> 01:01:13.810
+Julien Lozi: what II don't want to do is
+
+524
+01:01:13.950 --> 01:01:16.610
+Julien Lozi: removed the visible bench to install them.
+
+525
+01:01:16.870 --> 01:01:22.370
+Julien Lozi:  I mean, you know, if we have to, we have to. But ideally
+
+526
+01:01:23.610 --> 01:01:27.320
+Julien Lozi: I think if Clint is off, then we should be okay.
+
+527
+01:01:28.260 --> 01:01:32.690
+Barnaby Norris: totally. Yeah, that's a really good point. So make sure we do that at that time.
+
+528
+01:01:32.940 --> 01:01:33.700
+Eckhart Spalding: Okay.
+
+529
+01:01:34.290 --> 01:01:42.270
+Julien Lozi:  yeah. The third one spectrograph, so I can send you the dimensions.
+
+530
+01:01:44.290 --> 01:01:45.500
+Julien Lozi: A
+
+531
+01:01:46.920 --> 01:01:52.580
+Julien Lozi: quint observation. So that would be October third, twenty-third November 2 and 3,
+
+532
+01:01:54.450 --> 01:01:56.429
+Julien Lozi: and yep.
+
+533
+01:01:59.240 --> 01:02:01.920
+Julien Lozi: number 6. Banabino's. So
+
+534
+01:02:03.360 --> 01:02:08.079
+Barnaby Norris: oh, does he? Okay? Oh, actually, no, no. I know some.
+
+535
+01:02:08.160 --> 01:02:30.510
+Barnaby Norris: Yeah. But there was also Ollie mentioned. Maybe this actually a sub thing like there's because you were with robin and whatnot for longer term stuff. Are there other ones that are? Because Airbnb, basically, everything's doubled in price like it's insane. So what used to be really cheap is now expensive, but I think there might be cheaper, you know, ones like robins. Or whatever do you guys know
+
+536
+01:02:30.990 --> 01:02:32.420
+Barnaby Norris: anything like that.
+
+537
+01:02:34.280 --> 01:02:46.260
+Barnaby Norris: I mean, Robin is an option. If she has face, she still does stuff. Ok. is what's the best way to contact her? Because she's doesn't actually have a website or anything. Does she
+
+538
+01:02:47.250 --> 01:02:53.729
+Julien Lozi: email? I think you have information. Right?
+
+539
+01:02:54.560 --> 01:02:57.310
+Olivier Guyon: I have the email somewhere. Yeah, I can dig it up.
+
+540
+01:02:57.350 --> 01:03:00.599
+Barnaby Norris: Send me an email, Barnaby. So I don't forget.
+
+541
+01:03:01.250 --> 01:03:02.060
+Barnaby Norris: Cool.
+
+542
+01:03:05.670 --> 01:03:12.039
+Eckhart Spalding: Okay, it sounds like that's everything, for now, is there? Is there anything we're leaving out?
+
+543
+01:03:13.920 --> 01:03:17.790
+Eckhart Spalding: Anything else the Skxio people need from us before we get back in touch with them.
+
+544
+01:03:18.940 --> 01:03:25.069
+Julien Lozi: I think once you have the dates, then you need to fill up visitor forms. So just
+
+545
+01:03:25.420 --> 01:03:32.430
+Barnaby Norris: yeah, yeah, we'll we'll get back in touch with you in the next couple of days. Once we sort of, you know, gone through all this information
+
+546
+01:03:33.000 --> 01:03:35.509
+Barnaby Norris: final, like, yeah, finest things a bit.
+
+547
+01:03:37.180 --> 01:03:38.530
+Julien Lozi: Yeah. Okay.
+
+548
+01:03:39.910 --> 01:03:44.510
+Eckhart Spalding: Thank you. Thanks a lot for the big updates.
+
+549
+01:03:44.810 --> 01:03:48.270
+Barnaby Norris: Thank you. Look forward to seeing you soon. All right.
+
+550
+01:03:48.580 --> 01:03:49.899
+Julien Lozi: Excellent, everybody
+
+551
+01:03:49.920 --> 01:03:52.360
+Vincent Deo: see you bye, bye.
+
