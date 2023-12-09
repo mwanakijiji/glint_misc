@@ -34,7 +34,7 @@ diam_lenslet = 58.275*u.micron # 66.*u.micron
 # if true, secondary obscuration added in; which I think is bogus, 
 # because subapertures should be sampled across the pupil in unobscured
 # regions; ONLY USE TRUE IF YOU KNOW WHAT YOU'RE DOING
-subaru_pupil = False
+subaru_pupil = True
 
 # smallest fractional distance between (projected) DM hexagonal subaperture
 # and outer edge of subaperture that passes light
@@ -44,7 +44,7 @@ subaru_pupil = False
 stop_factor_wavefront = 0.1
 
 # index of refraction of substrate
-n_glass = 1.5 # 1.5255
+n_glass = 1.5255 # 1.5255 (D263), 1.5 (Gorilla)
 
 ## LOOP THIS
 # wavelength in air (n = 1)
@@ -54,7 +54,7 @@ wavel_air = 1.55*u.micron
 grid_foc_length = range(300,600,20)
 
 # steps in defocus (tenths of a wave)
-grid_defocus = range(0,1)
+grid_defocus = range(0,5,1)
 
 '''
 file_names_waveguide_modes = [stem + 'AF45_100x_Zeiss_300um_1550nm_1000mmmin_67pt5nJ_csv.pkl', 
@@ -65,7 +65,8 @@ file_names_waveguide_modes = [stem + 'AF45_100x_Zeiss_300um_1550nm_1000mmmin_67p
                               stem + 'AF45_100x_Zeiss_300um_1550nm_750mmmin_77pt5nJ_csv.pkl']
 '''
 # to study just one waveguide
-file_names_waveguide_modes = [stem + 'AF45_100x_Zeiss_300um_1550nm_2000mmmin_67pt5nJ_csv.pkl']
+#file_names_waveguide_modes = [stem + 'AF45_100x_Zeiss_300um_1550nm_2000mmmin_67pt5nJ_csv.pkl']
+file_names_waveguide_modes = [stem + 'AF45_100x_Zeiss_300um_1550nm_1000mmmin_67pt5nJ_csv.pkl']
 
 ## END USER-DEFINED QUANTITIES
 ##############################################
