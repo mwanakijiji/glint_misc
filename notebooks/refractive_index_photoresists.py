@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 # [ B_1, C_1, B_2, C_2, B_3, C_3 ]
 # units: [ 1, um**2, 1, um**2, 1, um**2 ]
 
+coeffs_sellmeier_ips = np.array([8.3794e-1, 1.4153e-6, 4.0620e-1, 3.1160e-2, 4.7704e-3, 3.3379])
 coeffs_sellmeier_ipdip = np.array([1.2899, 1.1283e-2, 6.0569e-2, 7.7762e-2, 1.1844e5, 2.5802e7])
 
 def n_sell(wavel_um, coeffs_array):
@@ -27,11 +28,15 @@ def n_sell(wavel_um, coeffs_array):
 # check for consistency with table
 wavel_samples = np.linspace(.400,1.600,200) # um
 
-plt.plot(wavel_samples,n_sell(wavel_samples, coeffs_sellmeier_ipdip))
-plt.show()
+#plt.plot(wavel_samples,n_sell(wavel_samples, coeffs_sellmeier_ipdip))
+#plt.show()
 
-n_glint_chip = n_sell(wavel_um = np.array([1.50,1.55,1.60]), 
+n_glint_chip_ips = n_sell(wavel_um = np.array([1.50,1.55,1.60]), 
+       coeffs_array = coeffs_sellmeier_ips) # GLINT bandpass is 1.55 um +-50 nm
+
+n_glint_chip_ipdip = n_sell(wavel_um = np.array([1.50,1.55,1.60]), 
        coeffs_array = coeffs_sellmeier_ipdip) # GLINT bandpass is 1.55 um +-50 nm
 
-print('n for GLINT science bandpass (cut-on, mid, cut-off):',n_glint_chip)
+print('n for GLINT science bandpass, IP-S (cut-on, mid, cut-off):',n_glint_chip_ips)
+print('n for GLINT science bandpass, IP-DIP (cut-on, mid, cut-off):',n_glint_chip_ipdip)
 
