@@ -40,3 +40,5 @@ n_glint_chip_ipdip = n_sell(wavel_um = np.array([1.50,1.55,1.60]),
 print('n for GLINT science bandpass, IP-S (cut-on, mid, cut-off):',n_glint_chip_ips)
 print('n for GLINT science bandpass, IP-DIP (cut-on, mid, cut-off):',n_glint_chip_ipdip)
 
+import ipdb; ipdb.set_trace()
+
