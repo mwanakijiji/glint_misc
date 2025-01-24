@@ -8,7 +8,7 @@ from matplotlib.patches import Circle
 
 phase=np.pi/2.0*0.0
 D=20000 #mm # 8250 # scale the output array size with this; 10000 for 100x100 psf cutout
-padfactor=44.0 # 16 # scale the PSF with this
+padfactor=20.0 # 16 # scale the PSF with this
 deltaspacing = 100 #mm # 100
 centerx=D*padfactor/deltaspacing/2.0 #pixels
 centery=D*padfactor/deltaspacing/2.0 #pixels
@@ -195,7 +195,7 @@ def main():
     waveguide_cutout = df_intensity[int(xycen[1]-buffer):int(xycen[1]+buffer),int(xycen[0]-buffer):int(xycen[0]+buffer)]
 
     ## USER INPUTS
-    input_field = field_complex_A_hex
+    input_field = field_complex_A_circ
     mode_field = waveguide_cutout # this variable is only real, but physically the LT0 mode has a phase of zero anyway
     ## END USER INPUT
 
@@ -214,14 +214,15 @@ def main():
     # plotting
 
     # radius of first dark ring in um
-    wavel = 1.55 # um
-    foc_length = 400 # um
-    D_lens = 66 # um
+    wavel = 1.55/1.5255 # um # 1.55 um in air, 1.55um/n = 1.55um/1.5255 = 1.016 um in substrate of index of refraction n
+    foc_length = 284.664 # 
+    D = 66 # um
 
-    circ_r_um = 1.22 * wavel * foc_length/D_lens
+    circ_r_um = 1.22 * wavel * foc_length/D
     circ_r_pix = um2pix(circ_r_um)
 
-    import ipdb; ipdb.set_trace()
+    print('radius of first dark Airy ring (um):',circ_r_um)
+
     # define circle for scale in plots
     circ_cen_x = 0
     circ_cen_y = 0 
@@ -235,7 +236,6 @@ def main():
     ax[0,0].imshow(circ_aperture_simple, cmap='Greys_r', interpolation='nearest')
     ax[0,0].set_xlabel('(arbitrary)')
     ax[0,0].set_ylabel('(arbitrary)')
-
 
     ax[0,1].set_title('Hexagonal subap')
     ax[0,1].imshow(hex_aperture_simple, cmap='Greys_r', interpolation='nearest')
@@ -260,8 +260,6 @@ def main():
     ax[1,1].set_xlabel('pixel')
     ax[1,1].set_ylabel('pixel')
     ax[1,1].add_patch(circ2)
-
-
 
     ax[1,2].set_title('Waveguide mode (linear)')
     ax[1,2].imshow(waveguide_cutout, extent=[-waveguide_cutout.shape[1]/2., waveguide_cutout.shape[1]/2., -waveguide_cutout.shape[0]/2., waveguide_cutout.shape[0]/2. ], alpha=1)
@@ -289,7 +287,8 @@ def main():
     secay = ax[0,2].secondary_yaxis('right', functions=(pix2um, um2pix))
     secay.set_ylabel('physical (um)')
 
-    plt.show()
+    #plt.show()
+    plt.savefig('junk.png')
 
     '''
     fig, axs = plt.subplots(1, 4)
