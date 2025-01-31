@@ -2,12 +2,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy.io import loadmat
+from mpl_toolkits.mplot3d import Axes3D  # Import 3D toolkit
+
 
 stem = '/Users/eckhartspalding/Documents/git.repos/glint_misc/notebooks/data/'
 
 mat_data = loadmat(stem + 'glint_waveguide_plot.mat')
 
 wg_names = ['N1', 'N2', 'N3', 'B1B', 'B3A', '', 'P1', '', 'B2B', 'B3B', '', 'P3', '', 'B1A', 'B2A', '', 'P2', '' ]
+linestyle_array = ['-', '-', '-', '--', '--', '-', ':', '-', '--', '--', '-', ':', '-', '--', '--', '-', ':', '-' ]
 
 # Define a list of 18 distinct colors
 colors = [
@@ -28,14 +31,14 @@ for wg_num in range(len(mat_data['data'][:][0]['X'])):
     valid_mask = np.isfinite(mat_data['data'][0][wg_num]['X']) & np.isfinite(mat_data['data'][0][wg_num]['Y'])
     plt.plot(mat_data['data'][0][wg_num]['Y'][valid_mask], 
              mat_data['data'][0][wg_num]['X'][valid_mask], 
+             linestyle = linestyle_array[wg_num],
              label=str(wg_names[wg_num]), 
              linewidth=2,
              color=colors[wg_num])
-plt.xlabel('Y')
-plt.ylabel('X')
+plt.xlabel('Y (mm)')
+plt.ylabel('X (mm)')
 plt.title('YX Projection (Auto-scaled)')
 plt.legend()
-plt.grid()
 
 # XZ projection
 plt.subplot(232)
@@ -43,13 +46,13 @@ for wg_num in range(len(mat_data['data'][:][0]['X'])):
     valid_mask = np.isfinite(mat_data['data'][0][wg_num]['X']) & np.isfinite(mat_data['data'][0][wg_num]['Z'])
     plt.plot(mat_data['data'][0][wg_num]['X'][valid_mask], 
              mat_data['data'][0][wg_num]['Z'][valid_mask], 
+             linestyle = linestyle_array[wg_num],
              label=str(wg_names[wg_num]), 
              linewidth=2,
              color=colors[wg_num])
-plt.xlabel('X')
-plt.ylabel('Z')
+plt.xlabel('X (mm)')
+plt.ylabel('Z (mm)')
 plt.title('XZ Projection (Auto-scaled)')
-plt.grid()
 
 # YZ projection
 plt.subplot(233)
@@ -57,13 +60,13 @@ for wg_num in range(len(mat_data['data'][:][0]['X'])):
     valid_mask = np.isfinite(mat_data['data'][0][wg_num]['Y']) & np.isfinite(mat_data['data'][0][wg_num]['Z'])
     plt.plot(mat_data['data'][0][wg_num]['Y'][valid_mask], 
              mat_data['data'][0][wg_num]['Z'][valid_mask], 
+             linestyle = linestyle_array[wg_num],
              label=str(wg_names[wg_num]), 
              linewidth=2,
              color=colors[wg_num])
-plt.xlabel('Y')
-plt.ylabel('Z')
+plt.xlabel('Y (mm)')
+plt.ylabel('Z (mm)')
 plt.title('YZ Projection (Auto-scaled)')
-plt.grid()
 
 def get_axis_limits(data, dim1, dim2):
     min1, max1 = float('inf'), float('-inf')
@@ -94,6 +97,8 @@ for wg_num in range(len(mat_data['data'][:][0]['X'])):
              label=str(wg_names[wg_num]), 
              linewidth=2,
              color=colors[wg_num])
+ax.set_xlabel('X (mm)')
+ax.set_ylabel('Y (mm)')
 ax.set_aspect('equal')
 ax.set_xlim(0, 65)
 ax.set_ylim(-8, 2)
@@ -101,4 +106,59 @@ ax.set_ylim(-8, 2)
 plt.tight_layout()
 plt.show()
 
+########### 3D plot
 
+plt.clf()
+plt.figure(figsize=(10, 10))
+ax = plt.subplot(111, projection='3d')
+
+# Plot each waveguide
+for wg_num in range(len(mat_data['data'][:][0]['X'])):
+    valid_mask = (np.isfinite(mat_data['data'][0][wg_num]['X']) & 
+                 np.isfinite(mat_data['data'][0][wg_num]['Y']) & 
+                 np.isfinite(mat_data['data'][0][wg_num]['Z']))
+    
+    ax.plot3D(mat_data['data'][0][wg_num]['X'][valid_mask],
+              mat_data['data'][0][wg_num]['Y'][valid_mask],
+              mat_data['data'][0][wg_num]['Z'][valid_mask],
+              label=str(wg_names[wg_num]),
+              linewidth=2,
+              linestyle = linestyle_array[wg_num],
+              color=colors[wg_num])
+
+# Set labels and title
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+ax.set_title('3D Waveguide Plot')
+
+# Add legend
+ax.legend()
+
+# Adjust the viewing angle for better visualization
+ax.view_init(elev=20, azim=45)  # You can adjust these angles
+
+plt.tight_layout()
+plt.show()
+
+########### zoom in on Y-junctions
+plt.clf()
+plt.figure(figsize=(10, 10))
+ax = plt.subplot(111)
+
+for wg_num in range(len(mat_data['data'][:][0]['X'])):
+    valid_mask = np.isfinite(mat_data['data'][0][wg_num]['X']) & np.isfinite(mat_data['data'][0][wg_num]['Y'])
+    ax.plot(mat_data['data'][0][wg_num]['Y'][valid_mask], 
+             mat_data['data'][0][wg_num]['X'][valid_mask], 
+             linestyle = linestyle_array[wg_num],
+             label=str(wg_names[wg_num]), 
+             linewidth=2,
+             color=colors[wg_num])
+ax.set_xlabel('Y')
+ax.set_ylabel('X')
+ax.set_xlim(0,14)
+ax.set_ylim(0.15,-0.10)
+plt.title('YX Projection (Auto-scaled)')
+plt.legend()
+plt.grid()
+plt.show()

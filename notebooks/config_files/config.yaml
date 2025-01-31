@@ -1,0 +1,18 @@
+star:
+  name: "beta Pic"
+  spectral_type: "A6V"
+  magnitude: 3.86
+  band: "H"
+  temperature: 8052  # K
+
+telescope:
+  diameter: 8.2  # meters
+  central_obstruction: 2.3  # meters
+  throughput: 0.8  # Including primary/secondary reflectivity
+
+detector:
+  quantum_efficiency: 0.8
+  gain: 1.2  # e-/ADU
+  integration_time: 0.1  # seconds
+  dark_current: 0.1  # e-/s
+  read_noise: 10  # e-
